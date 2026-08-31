@@ -2,7 +2,7 @@
 
 > 交接日期：2026-08-31（批次 E 终版）｜ 仓库根：`E:\新建文件夹\ui-style-gallery`
 > 一句话：单文件「活体博物馆」UI 风格图鉴——**100 种风格**在同一组件基线上横向对比，配 70 词专业词库、7 座维度分馆、18 个视图与 9 大工具区。
-> 当前状态：**verify.js 全部断言 ALL PASS**（2026-08-31 批次 D 完成后实跑）；**已有 git 仓库**（baseline commit `8fe7a8a` 起）。
+> 当前状态：**verify.js 全部断言 ALL PASS**（2026-08-31 批次 D 完成后实跑）；**已上传公开仓库** https://github.com/blueicx/ui-style-gallery （分支 main，2026-09-01 经 `gh repo create --public --source . --push` 推送，本地 origin 已配置）。
 
 ---
 
