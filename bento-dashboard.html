@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>便当盒仪表盘 SaaS · 单风格全页实战</title>
+<link rel="icon" href="ui-style-atlas.svg" type="image/svg+xml">
+<style>
+/* ═══ Bento Grid Dashboard · Design Tokens（源自图鉴 s10 便当盒网格）═══ */
+:root{
+  --bg:#ececea;         /* 浅灰白底 */
+  --cell:#ffffff;       /* 白色格身 */
+  --ink:#111318;        /* 近黑 */
+  --muted:#8a8f98;      /* 次要灰 */
+  --accent-cell:#16181d;/* 唯一黑底反白格 */
+  --brand:#4f6df5;      /* 品牌浅色锚点格 */
+  --radius:20px; --gap:12px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:'Inter','SF Pro Display','Noto Sans SC',sans-serif;-webkit-font-smoothing:antialiased;padding:24px}
+.wrap{max-width:1080px;margin:0 auto}
+header{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:18px}
+header h1{font-size:22px;font-weight:700;letter-spacing:-.02em}
+header a{font-family:ui-monospace,monospace;font-size:12px;color:var(--muted);text-decoration:none}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:118px;gap:var(--gap)}
+.cell{background:var(--cell);border-radius:var(--radius);padding:18px 20px;display:flex;flex-direction:column;overflow:hidden;position:relative}
+.cell h4{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:600;margin-bottom:auto}
+.cell .big{font-size:26px;font-weight:700;letter-spacing:-.03em;margin-top:8px}
+.cell .sub{font-size:12.5px;color:var(--muted);margin-top:4px;line-height:1.5}
+.wide{grid-column:span 2}.tall{grid-row:span 2}.full{grid-column:span 4}
+.accent{background:var(--accent-cell);color:#fff}
+.accent h4{color:#9aa1ad}.accent .big{color:#fff}
+.brand{background:var(--brand);color:#fff}.brand h4{color:#ffffffb3}
+.btn{align-self:flex-start;margin-top:10px;background:#fff;color:#111;border:none;border-radius:999px;padding:8px 16px;font-size:13px;font-weight:600;cursor:pointer}
+.bar{margin-top:auto;height:6px;border-radius:999px;background:#e8e8e6;overflow:hidden}
+.bar i{display:block;height:100%;width:68%;background:var(--brand);border-radius:inherit}
+.avatars{display:flex;margin-top:10px}.avatars span{width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,#f5b301,#ff6363);border:2px solid #fff;margin-left:-8px;display:flex;align-items:center;justify-content:center;font-size:12px;color:#fff;font-weight:700}
+.avatars span:first-child{margin-left:0}
+footer{margin-top:16px;font-family:ui-monospace,monospace;font-size:11px;color:var(--muted);text-align:center}
+@media(max-width:760px){.grid{grid-template-columns:repeat(2,1fr)}.wide,.full{grid-column:span 2}}
+@media print{header a{display:none}body{padding:0}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>Nimbus OS — 团队控制台</h1>
+  <a href="index.html#/gallery">← 返回 UI 风格图鉴</a>
+</header>
+<main class="grid" role="main">
+  <section class="cell wide accent"><h4>当前项目</h4><p class="big">Style Atlas v1.0</p><p class="sub">77 种风格全部归档完成</p><button class="btn">打开面板 →</button></section>
+  <section class="cell tall"><h4>本周焦点</h4><p class="big">86%</p><p class="sub">交付进度：设计冻结后进入 QA。</p><div class="bar"><i></i></div></section>
+  <section class="cell"><h4>待办</h4><p class="big">3 项</p><p class="sub">2 个评审 · 1 个交付</p></section>
+  <section class="cell"><h4>团队在线</h4><div class="avatars"><span>A</span><span>B</span><span>C</span><span>+5</span></div></section>
+  <section class="cell wide brand"><h4>通知中心</h4><p class="big">v2.4.1 已发布</p><p class="sub">全量灰度完成，崩溃率 0.02%。</p></section>
+  <section class="cell full"><h4>速览</h4><p class="sub" style="margin-top:8px">一屏之内高密度陈列，每格自成一体又互相咬合——统一 gap 与圆角是便当盒布局的生命线。每格只讲一件事。</p></section>
+</main>
+<footer>BENTO GRID · 单风格实战页 · 对应图鉴 s10 · tokens 见 :root</footer>
+</div>
+</body>
+</html>

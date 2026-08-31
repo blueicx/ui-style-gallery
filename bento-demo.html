@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bento 个人主页实战 · UI Style Atlas Case Study</title>
+<meta name="description" content="便当盒网格风格的全页面实战：把组件基线放大成完整个人主页。">
+<style>
+/* ═══ Design Tokens · 源自 10 号展台九维档案 ═══ */
+:root{
+  --bg:#ececea; --cell:#ffffff; --ink:#111111; --muted:#6f6d68; --line:#e2e0dc;
+  --accent:#e85d26; --soft:#f6f5f2;
+  --r-cell:20px; --gap:12px;
+  --sp-1:4px;--sp-2:8px;--sp-3:12px;--sp-4:16px;--sp-6:24px;--sp-8:32px;--sp-12:48px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Space Grotesk','Noto Sans SC',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+.wrap{max-width:1060px;margin:0 auto;padding:0 var(--sp-4)}
+a{color:inherit}
+
+/* 导航 */
+.topnav{display:flex;justify-content:space-between;align-items:center;padding:var(--sp-4) 0;font-size:13.5px}
+.topnav .logo{font-weight:700;letter-spacing:-.02em}
+.topnav nav{display:flex;gap:var(--sp-4);color:var(--muted)}
+.topnav nav a{text-decoration:none;color:inherit}
+.topnav nav a:hover{color:var(--ink)}
+
+/* Hero 名牌格 */
+.hero{display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:minmax(96px,auto);gap:var(--gap);margin-top:var(--sp-6)}
+.cell{background:var(--cell);border-radius:var(--r-cell);padding:var(--sp-6) var(--sp-4);
+  display:flex;flex-direction:column;justify-content:flex-end;min-height:120px;position:relative;overflow:hidden}
+.cell h4{position:absolute;top:var(--sp-4);left:var(--sp-4);font-size:10.5px;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--muted);font-weight:500}
+.big{font-size:clamp(22px,2.6vw,30px);font-weight:700;letter-spacing:-.02em;line-height:1.15}
+.sub{font-size:12.5px;color:var(--muted);margin-top:var(--sp-1)}
+.wide{grid-column:span 2}
+.tall{grid-row:span 2}
+.accent{background:var(--ink);color:#fff}
+.accent .big{color:#ffd166}
+.accent .sub{color:rgba(255,255,255,.72)}
+.accent h4{color:rgba(255,255,255,.55)}
+.soft{background:var(--soft)}
+.dot{width:52px;height:52px;border-radius:50%;background:var(--accent);margin-bottom:auto}
+.ring{width:52px;height:52px;border-radius:50%;border:7px solid #ffd166;margin-bottom:auto;background:transparent}
+.bar-deco{margin-bottom:auto;width:100%;height:64px;border-radius:12px;
+  background:repeating-linear-gradient(90deg,var(--soft) 0 14px,#ffe1cf 14px 28px)}
+
+/* 技能矩阵 */
+.skills{display:flex;flex-wrap:wrap;gap:var(--sp-2);margin-top:var(--sp-3)}
+.pill{font-size:11.5px;font-family:'JetBrains Mono',monospace;background:var(--soft);
+  border:1px solid var(--line);padding:5px 11px;border-radius:999px}
+
+/* 项目卡 */
+.proj{display:flex;flex-direction:column;gap:2px}
+.proj .num{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--accent)}
+.proj p{font-size:12px;color:var(--muted);margin-top:var(--sp-1)}
+
+/* 时间线 */
+.tl{display:flex;flex-direction:column;gap:var(--sp-3);margin-top:var(--sp-2)}
+.tl div{display:flex;gap:var(--sp-3);font-size:12px;align-items:baseline}
+.tl time{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--muted);flex:0 0 44px}
+
+/* 联系区 CTA */
+.cta{display:inline-flex;align-items:center;gap:8px;background:var(--ink);color:#fff;text-decoration:none;
+  font-weight:600;font-size:13.5px;padding:11px 20px;border-radius:999px;margin-top:var(--sp-3);
+  transition:transform 150ms ease,box-shadow 150ms ease}
+.cta:hover{transform:translateY(-2px);box-shadow:0 8px 18px rgba(0,0,0,.22)}
+
+footer{padding:var(--sp-12) 0 var(--sp-8);text-align:center;font-size:11.5px;color:var(--muted)}
+.back{display:inline-block;margin-top:var(--sp-2);font-family:'JetBrains Mono',monospace;font-size:11px;
+  color:var(--muted);text-decoration:none;border-bottom:1px solid var(--line)}
+.back:hover{color:var(--ink)}
+
+@media(max-width:860px){
+  .hero{grid-template-columns:repeat(2,1fr)}
+  .wide{grid-column:span 2}
+}
+@media(max-width:560px){
+  .hero{grid-template-columns:1fr}
+  .wide,.tall{grid-column:span 1;grid-row:span 1}
+  .topnav nav{display:none}
+}
+@media print{.cta,.topnav nav{display:none}.hero{grid-template-columns:repeat(2,1fr)}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="topnav">
+    <span class="logo">lin.works</span>
+    <nav aria-label="主导航"><a href="#work">项目</a><a href="#now">近况</a><a href="#contact">联系</a></nav>
+  </header>
+
+  <main class="hero" aria-label="个人主页便当网格">
+    <!-- Hero 名牌 -->
+    <div class="cell wide accent tall">
+      <h4>Who</h4>
+      <p class="big">林一舟<br>界面设计师 &amp; 前端工程师</p>
+      <p class="sub">八年经验，专注设计系统与数据可视化。相信好的界面是「看不见的设计」。</p>
+      <a class="cta" style="background:#ffd166;color:#111" href="#contact">合作洽谈 →</a>
+    </div>
+    <!-- 当前状态 -->
+    <div class="cell soft"><h4>Status</h4><span class="dot" aria-hidden="true"></span>
+      <p class="big">接单中</p><p class="sub">档期：2026 Q4</p></div>
+    <!-- 年限 -->
+    <div class="cell"><h4>Experience</h4>
+      <p class="big">8<span style="font-size:15px"> 年+</span></p><p class="sub">B 端 × 创意行业</p></div>
+    <!-- 技能 -->
+    <div class="cell wide"><h4>Stack</h4>
+      <div class="skills">
+        <span class="pill">Design System</span><span class="pill">Figma Tokens</span><span class="pill">React</span>
+        <span class="pill">D3.js</span><span class="pill">WCAG AA</span><span class="pill">Motion</span>
+      </div></div>
+    <!-- 代表项目 -->
+    <div id="work" class="cell proj"><h4>Case 01</h4>
+      <p class="num">FINTECH / 2025</p>
+      <p class="big" style="font-size:19px">云账本 App 重设计</p>
+      <p>转化率 +34%，获年度设计奖提名。</p></div>
+    <div class="cell proj soft"><h4>Case 02</h4>
+      <p class="num">SAAS / 2024</p>
+      <p class="big" style="font-size:19px">Atlas 组件库</p>
+      <p>140+ 组件，服务 6 条产品线。</p></div>
+    <!-- 近况时间线 -->
+    <div id="now" class="cell wide"><h4>Now</h4>
+      <div class="tl">
+        <div><time>08月</time><span>开源「UI 风格图鉴」，一周 2k star</span></div>
+        <div><time>06月</time><span>为某新茶饮品牌完成小程序 3.0 设计系统</span></div>
+        <div><time>03月</time><span>UXConf 演讲：《留白经济学》</span></div>
+      </div></div>
+    <!-- 联系 -->
+    <div id="contact" class="cell wide accent"><h4>Contact</h4>
+      <p class="big" style="font-size:21px">hi@lin.works</p>
+      <p class="sub">微信 LINYIZHOU-DESIGN · 通常 24h 内回复</p></div>
+    <!-- 彩蛋格 -->
+    <div class="cell"><h4>Fun</h4><span class="ring" aria-hidden="true"></span>
+      <p class="sub" style="font-size:12px">胶片摄影 / 手冲咖啡 / 像素画复健中</p></div>
+  </main>
+
+  <footer>
+    <p>Bento Grid Case Study · 单文件 · 无依赖 · 响应式三段降级</p>
+    <a class="back" href="index.html#s10">← 返回图鉴 10 号展台</a>
+  </footer>
+</div>
+</body>
+</html>

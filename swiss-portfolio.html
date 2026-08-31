@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>瑞士国际主义作品集官网 · 单风格全页实战</title>
+<link rel="icon" href="ui-style-atlas.svg" type="image/svg+xml">
+<style>
+/* ═══ Swiss International Portfolio · Design Tokens ═══ */
+:root{
+  --paper:#F4F1EA;      /* 纸白底 */
+  --ink:#111111;        /* 近黑文本 */
+  --accent:#E63312;     /* 唯一强调：信号红（占比<5%） */
+  --line:#111111;
+  --grid:calc(100%/12);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:'Helvetica Neue',Helvetica,'Noto Sans SC',sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+
+/* ── 导航 ── */
+header{border-bottom:1px solid var(--line);position:sticky;top:0;background:var(--paper);z-index:10}
+.nav{display:flex;align-items:center;gap:24px;padding:18px 20px;max-width:1080px;margin:0 auto}
+.logo{font-weight:700;font-size:15px;letter-spacing:.06em}
+.logo i{color:var(--accent);font-style:normal}
+nav.links{margin-left:auto;display:flex;gap:22px}
+nav.links a{color:var(--ink);text-decoration:none;font-size:12px;text-transform:uppercase;letter-spacing:.14em}
+nav.links a:hover{color:var(--accent)}
+@media(max-width:640px){nav.links a:nth-child(n+3){display:none}}
+
+/* ── Hero：12 栏栅格，不对称版式 ── */
+.hero{display:grid;grid-template-columns:repeat(12,1fr);gap:16px;padding:72px 0 56px;border-bottom:1px solid var(--line)}
+.hero h1{grid-column:1/9;font-size:clamp(34px,6vw,64px);line-height:1.04;font-weight:700;letter-spacing:-.01em;text-transform:uppercase}
+.hero .red{color:var(--accent)}
+.hero aside{grid-column:10/13;align-self:end;font-size:13px;color:#444}
+.hero aside b{display:block;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;margin-bottom:8px;color:var(--ink)}
+@media(max-width:900px){.hero h1{grid-column:1/13}.hero aside{grid-column:1/7;margin-top:20px}}
+.meta-row{display:grid;grid-template-columns:repeat(12,1fr);gap:16px;padding:14px 0;border-bottom:1px solid var(--line);font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.08em}
+.meta-row span:nth-child(2){grid-column:5/9}.meta-row span:first-child{grid-column:1/5}.meta-row span:last-child{grid-column:9/13;text-align:right}
+@media(max-width:640px){.meta-row span{grid-column:auto!important;text-align:left}}
+
+/* ── 作品陈列 ── */
+.works{padding:56px 0;border-bottom:1px solid var(--line)}
+.kicker{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;margin-bottom:28px}
+.kicker em{color:var(--accent);font-style:normal}
+.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
+.work{border:1px solid var(--line);padding:18px;display:flex;flex-direction:column;min-height:210px;transition:transform .15s ease,box-shadow .15s ease}
+.work:hover{transform:translate(-3px,-3px);box-shadow:6px 6px 0 var(--ink)}   /* 色块位移而非 blur 阴影 */
+.work:nth-child(1){grid-column:1/7}
+.work:nth-child(2){grid-column:7/13}
+.work:nth-child(3){grid-column:2/8;margin-top:8px}
+.work:nth-child(4){grid-column:8/12;margin-top:32px}   /* 故意错位 = 不对称秩序 */
+@media(max-width:800px){.work{grid-column:1/13!important;margin-top:0!important}}
+.work .no{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em}
+.work h3{margin-top:auto;font-size:19px;text-transform:uppercase;line-height:1.2}
+.work p{font-size:12.5px;color:#444;margin-top:6px}
+.work .tag{align-self:flex-start;margin-top:14px;background:var(--accent);color:#fff;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;padding:3px 8px}
+
+/* ── 宣言区：衬线对比块 ── */
+.manifesto{padding:64px 0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
+.manifesto blockquote{grid-column:2/11;font-family:Georgia,'Noto Serif SC',serif;font-size:clamp(20px,3vw,30px);line-height:1.45}
+.manifesto blockquote::before{content:'“';color:var(--accent)}
+.manifesto cite{grid-column:2/11;font-style:normal;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;margin-top:18px}
+@media(max-width:800px){.manifesto blockquote,.manifesto cite{grid-column:1/13}}
+
+/* ── 联系表单：底线式输入 ── */
+.contact{padding:56px 0 72px;display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
+.contact .info{grid-column:1/6}
+.contact form{grid-column:7/13;display:flex;flex-direction:column;gap:22px}
+.contact h2{font-size:26px;text-transform:uppercase;line-height:1.15}
+.contact .info p{margin-top:14px;font-size:13px;color:#444;padding-right:24px}
+label{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;display:block;margin-bottom:6px}
+input,textarea{width:100%;border:none;border-bottom:1px solid var(--ink);background:transparent;padding:8px 2px;font:inherit;font-size:14px;border-radius:0}
+textarea{resize:vertical;min-height:84px}
+input:focus,textarea:focus{outline:none;border-bottom:2px solid var(--accent)}
+button.cta{align-self:flex-start;background:var(--ink);color:var(--paper);border:none;padding:13px 26px;font:inherit;font-weight:600;font-size:13px;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;transition:background .15s ease}
+button.cta:hover{background:var(--accent)}
+.formnote{font-size:11px;color:#666}
+
+footer{border-top:1px solid var(--line);padding:22px 0 40px;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.1em;display:flex;justify-content:space-between;color:#444;flex-wrap:wrap;gap:8px}
+.back{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--ink)}
+.back:hover{color:var(--accent);border-color:var(--accent)}
+</style>
+</head>
+<body>
+<header><div class="nav">
+  <span class="logo">STUDIO HELVETICA<i>*</i></span>
+  <nav class="links"><a href="#works">作品</a><a href="#manifesto">宣言</a><a href="#contact">联系</a></nav>
+</div></header>
+
+<main class="wrap">
+  <section class="hero">
+    <h1>Grid is<br>the <span class="red">Silence</span><br>of Design</h1>
+    <aside>
+      <b>PORTFOLIO — 2026</b>
+      平面与界面设计工作室。所有层级由字号、字重与对齐完成，装饰归零。
+    </aside>
+  </section>
+  <div class="meta-row"><span>EST. 2014 · ZÜRICH / SHANGHAI</span><span>IDENTITY · UI · EDITORIAL</span><span>GRID 12 / BASELINE 8PT</span></div>
+
+  <section class="works" id="works">
+    <p class="kicker">SELECTED WORKS <em>/ 04</em></p>
+    <div class="grid">
+      <article class="work"><span class="no">01 — IDENTITY</span><h3>Kinfolk 年度报告</h3><p>12 栏网格上的数据叙事，单一红色强调贯穿 96 页。</p><span class="tag">PRINT</span></article>
+      <article class="work"><span class="no">02 — UI SYSTEM</span><h3>Bahn 订票系统重构</h3><p>为铁路订票做的无装饰界面，可用性测试提升 31%。</p><span class="tag">DIGITAL</span></article>
+      <article class="work"><span class="no">03 — EXHIBITION</span><h3>构成主义百年展</h3><p>展览视觉与导视系统，基线严格对齐的展墙排版。</p><span class="tag">SPACE</span></article>
+      <article class="work"><span class="no">04 — EDITORIAL</span><h3>《秩序》杂志创刊号</h3><p>以 Müller-Brockmann 为方法论的独立刊物。</p><span class="tag">EDITORIAL</span></article>
+    </div>
+  </section>
+
+  <section class="manifesto" id="manifesto">
+    <blockquote>平面设计的秩序感来自严格的网格系统——12 栏，8pt 基线。设计师退到内容身后。</blockquote>
+    <cite>— STUDIO MANIFESTO, NO.01</cite>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="info">
+      <h2>New projects → hello@studio.ch</h2>
+      <p>接受品牌识别、界面系统与编辑设计的委托。工作语言：中文 / 德语 / 英语。</p>
+    </div>
+    <form onsubmit="event.preventDefault();this.querySelector('.formnote').textContent='已收到 — 我们会在两个工作日内回复。'">
+      <div><label for="nm">NAME</label><input id="nm" required placeholder="你的名字"></div>
+      <div><label for="em">EMAIL</label><input id="em" type="email" required placeholder="name@studio.com"></div>
+      <div><label for="ms">BRIEF</label><textarea id="ms" required placeholder="项目简述…"></textarea></div>
+      <button class="cta" type="submit">发送简报</button>
+      <p class="formnote">通常两个工作日内回复。</p>
+    </form>
+  </section>
+</main>
+
+<footer class="wrap">
+  <span>© 2026 STUDIO HELVETICA*</span>
+  <span>SWISS INTERNATIONAL STYLE · CASE STUDY</span>
+  <a class="back" href="index.html#/case">← 返回图鉴</a>
+</footer>
+</body>
+</html>

@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UI 风格图鉴 · Interface Style Atlas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;600&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#f6f3ec; --ink:#17140f; --muted:#6f6a5e; --line:#ddd6c6;
+  --accent:#e85d26; --card:#fffcf5;
+  --sans:'Space Grotesk','Noto Sans SC',system-ui,sans-serif;
+  --serif:'Noto Serif SC',Georgia,serif;
+  --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);
+  -webkit-font-smoothing:antialiased;text-wrap:pretty}
+.wrap{max-width:1180px;margin:0 auto;padding:0 clamp(16px,4vw,48px)}
+a{color:inherit}
+
+/* ── 页头 ── */
+.top{padding:clamp(40px,7vw,84px) 0 26px}
+.top h1{font-size:clamp(30px,5.4vw,58px);line-height:1.04;letter-spacing:-.03em;font-weight:700}
+.top h1 em{font-style:normal;color:var(--accent)}
+.kicker{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:18px}
+.lede{margin-top:16px;max-width:62ch;font-size:14.5px;line-height:1.75;color:var(--muted)}
+.lede b{color:var(--ink)}
+
+/* ── 索引条 ── */
+.indexbar{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--paper) 88%,transparent);
+  backdrop-filter:blur(10px);border-bottom:1px solid var(--line);margin-top:26px}
+.indexbar .row{display:flex;gap:8px;overflow-x:auto;padding:10px 0;scrollbar-width:none}
+.indexbar .row::-webkit-scrollbar{display:none}
+.chip{flex:0 0 auto;font-family:var(--mono);font-size:11px;letter-spacing:.02em;text-decoration:none;
+  padding:7px 12px;border:1px solid var(--line);border-radius:999px;color:var(--muted);
+  background:var(--card);transition:all .15s ease;min-height:32px}
+.chip:hover,.chip.on{color:var(--ink);border-color:var(--ink);transform:translateY(-1px)}
+.chip.on{background:var(--ink);color:var(--paper)}
+
+/* ── 展台框架 ── */
+.gallery{padding-bottom:20px}
+.exhibit{display:grid;grid-template-columns:300px 1fr;gap:clamp(20px,3vw,36px);
+  padding:clamp(30px,5vw,52px) 0;border-top:1px solid var(--line);scroll-margin-top:70px}
+.meta .num{font-family:var(--mono);font-size:12px;color:var(--accent)}
+.meta h2{font-size:clamp(21px,2.6vw,27px);letter-spacing:-.02em;line-height:1.15;margin:10px 0 4px}
+.meta h2 span{display:block;font-size:13.5px;font-weight:500;color:var(--muted);letter-spacing:0;margin-top:3px}
+.desc{font-size:13px;line-height:1.7;color:var(--muted);margin-top:10px;max-width:38ch}
+.spec{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:10px 14px;
+  margin-top:18px;padding-top:16px;border-top:1px dashed var(--line)}
+.spec li{font-size:12.5px;line-height:1.45;color:var(--muted)}
+.spec b{display:block;font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ink)}
+.stage{border-radius:20px;padding:clamp(18px,4vw,42px);display:flex;overflow:hidden}
+.demo{width:100%;max-width:580px;margin:auto;display:flex;flex-direction:column;gap:14px}
+
+/* ── 基线组件（默认形态，各风格覆盖）── */
+.d-nav{display:flex;align-items:center;gap:10px}
+.d-logo{font-weight:700;font-size:13px}
+.d-links{margin-left:auto;display:flex;gap:14px;font-size:11px;opacity:.68}
+.d-h{font-size:clamp(19px,2.4vw,23px);line-height:1.18;font-weight:700;letter-spacing:-.02em}
+.d-p{font-size:12.5px;line-height:1.6;opacity:.72;max-width:36ch}
+.d-row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.d-btn{font-family:inherit;font-weight:600;font-size:12.5px;padding:10px 18px;border:none;cursor:pointer;
+  background:#17140f;color:#fff;transition:transform .15s ease,box-shadow .15s ease}
+.d-btn:hover{transform:translateY(-1px)}
+.d-btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.d-btn.ghost{background:transparent;color:inherit;border:1px solid currentColor;opacity:.85}
+.d-input{font-family:inherit;font-size:12.5px;padding:10px 13px;width:min(230px,100%);
+  border:1px solid #bbb;background:#fff;color:inherit}
+.d-input::placeholder{color:#999}
+.d-tog{flex:0 0 auto;width:38px;height:21px;border-radius:999px;background:#bbb;position:relative;cursor:pointer}
+.d-tog::after{content:"";position:absolute;top:2.5px;left:2.5px;width:16px;height:16px;border-radius:50%;background:#fff;transition:left .15s}
+.d-tog.onn{background:#17140f}.d-tog.onn::after{left:19px}
+.d-badges{display:flex;gap:8px;flex-wrap:wrap}
+.d-badge{font-size:10.5px;font-weight:600;letter-spacing:.04em;padding:4px 9px;background:#e9e6dd}
+.d-prog{height:6px;width:min(240px,100%);background:#e3ded1;overflow:hidden}
+.d-prog i{display:block;height:100%;width:64%;background:#17140f}
+.d-card{font-size:11.5px;line-height:1.55;padding:15px;background:#fff;border:1px solid #e4dfd2}
+.d-foot{font-family:var(--mono);font-size:10px;opacity:.5;letter-spacing:.05em}
+/* ═══ 01 瑞士国际主义 ═══ */
+#s1 .stage{background:#f0ede4;border:none;border-radius:0}
+#s1 .d-nav{border-bottom:2px solid #111;padding-bottom:12px;margin-bottom:6px}
+#s1 .d-h{font-size:clamp(24px,3vw,32px);text-transform:uppercase;letter-spacing:-.01em}
+#s1 .d-btn{background:#e63312;border-radius:0;text-transform:uppercase;font-size:11px;letter-spacing:.1em}
+#s1 .d-btn:hover{box-shadow:4px 4px 0 #111}
+#s1 .d-btn.ghost{color:#111;background:transparent}
+#s1 .d-input{border:none;border-bottom:2px solid #111;border-radius:0;background:transparent}
+#s1 .d-tog.onn{background:#e63312}
+#s1 .d-badge{background:#e63312;color:#fff;border-radius:0}
+#s1 .d-badge:nth-child(2){background:#111}
+#s1 .d-prog{border-radius:0}#s1 .d-prog i{background:#e63312}
+#s1 .d-card{border-radius:0;border-color:#111;box-shadow:8px 8px 0 #00000014}
+
+/* ═══ 02 新粗野主义 ═══ */
+#s2 .stage{background:#fff200}
+#s2 .demo{gap:18px}
+#s2 .d-logo{text-transform:uppercase;letter-spacing:.02em}
+#s2 .d-h{font-size:clamp(24px,3vw,30px);font-weight:800;text-transform:uppercase;line-height:1}
+#s2 .d-btn{background:#ff6b9d;color:#111;border:3px solid #111;border-radius:0;
+  box-shadow:5px 5px 0 #111;font-weight:700}
+#s2 .d-btn:hover{transform:translate(-2px,-2px);box-shadow:7px 7px 0 #111}
+#s2 .d-btn.ghost{background:#a78bfa}
+#s2 .d-input{border:3px solid #111;border-radius:0;box-shadow:inset -3px -3px 0 #00000015;background:#fffdf2}
+#s2 .d-tog{background:#fff;border:3px solid #111;border-radius:0;width:44px;height:24px}
+#s2 .d-tog::after{width:14px;height:14px;top:2px;left:2px;border-radius:0;background:#111}
+#s2 .d-tog.onn{background:#4ade80}#s2 .d-tog.onn::after{left:25px}
+#s2 .d-badge{background:#fff;border:2px solid #111;border-radius:0;box-shadow:3px 3px 0 #111;color:#111}
+#s2 .d-prog{height:16px;background:#fff;border:3px solid #111;border-radius:0}
+#s2 .d-prog i{background:repeating-linear-gradient(45deg,#111 0 8px,#ff6b9d 8px 16px)}
+#s2 .d-card{background:#fff;border:3px solid #111;box-shadow:6px 6px 0 #111;font-weight:500}
+#s2 .d-p{opacity:1;font-weight:600}
+
+/* ═══ 03 玻璃拟态 ═══ */
+#s3 .stage{background:
+  radial-gradient(340px 300px at 20% 22%,#7c6cff66,transparent 70%),
+  radial-gradient(380px 320px at 82% 74%,#31c48d59,transparent 70%),
+  linear-gradient(150deg,#20242e,#12141b)}
+#s3 .stage,.g-stage{color:#f4f5fb}
+.glass,.g-panel{background:#ffffff14;border:1px solid #ffffff2e;
+  backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-radius:18px;
+  box-shadow:0 10px 34px #00000042}
+#s3 .demo>.glass,#s3 .d-card{padding:18px}
+#s3 .d-nav,#s3 .d-row:first-of-type{padding:13px 16px}
+#s3 .d-links{opacity:.75}
+#s3 .d-btn{background:#ffffffe8;color:#22252e;border-radius:999px}
+#s3 .d-btn:hover{box-shadow:0 6px 22px #ffffff38}
+#s3 .d-btn.ghost{background:#ffffff17;color:#f4f5fb;border-color:#ffffff40}
+#s3 .d-input{background:#ffffff12;border-color:#ffffff33;color:#f4f5fb;border-radius:12px}
+#s3 .d-input::placeholder{color:#ffffff85}
+#s3 .d-tog{background:#ffffff2b}#s3 .d-tog.onn{background:#7c6cff}
+#s3 .d-badge{background:#ffffff1c;border:1px solid #ffffff26;color:#eef0fa;border-radius:999px}
+#s3 .d-prog{background:#ffffff20;border-radius:999px}#s3 .d-prog i{background:linear-gradient(90deg,#7c6cff,#4cc9f0);border-radius:999px}
+#s3 .d-card{background:#ffffff10;border-color:#ffffff29;backdrop-filter:blur(14px)}
+#s3 .d-p{opacity:.8}
+
+/* ═══ 04 新拟物化 ═══ */
+#s4 .stage{background:#e4e6ee}
+.neu-raised{background:#e4e6ee;border-radius:16px;
+  box-shadow:7px 7px 14px #c3c5cf,-7px -7px 14px #ffffff}
+.neu-inset{background:#e4e6ee;border-radius:14px;box-shadow:inset 5px 5px 10px #c3c5cf,inset -5px -5px 10px #ffffff}
+#s4 .demo>.neu-raised{padding:20px;display:flex;flex-direction:column;gap:16px}
+#s4 .d-nav{padding:13px 17px}
+#s4 .d-h{color:#3d4152}
+#s4 .d-p{color:#6a6f83;opacity:1}
+#s4 .d-btn{background:#e4e6ee;color:#4a4f63;border-radius:12px;
+  box-shadow:6px 6px 12px #c3c5cf,-6px -6px 12px #ffffff}
+#s4 .d-btn:active,#s4 .d-btn.pressed{box-shadow:inset 4px 4px 9px #c3c5cf,inset -4px -4px 9px #ffffff}
+#s4 .d-btn.ghost{color:#5b60d6}
+#s4 .d-input{background:#e4e6ee;border:none;color:#3d4152;box-shadow:inset 5px 5px 10px #c3c5cf,inset -5px -5px 10px #ffffff;border-radius:12px}
+#s4 .d-input::placeholder{color:#8b90a5}
+#s4 .d-tog{background:#e4e6ee;box-shadow:inset 4px 4px 8px #c3c5cf,inset -4px -4px 8px #ffffff}
+#s4 .d-tog.onn{box-shadow:inset 4px 4px 8px #c3c5cf,inset -4px -4px 8px #ffffff}
+#s4 .d-tog.onn::after{background:#5b60d6}
+#s4 .d-badge{background:#e4e6ee;color:#4a4f63;border-radius:999px;box-shadow:4px 4px 8px #c3c5cf,-4px -4px 8px #ffffff}
+#s4 .d-prog{background:#e4e6ee;border-radius:99px;height:10px;box-shadow:inset 3px 3px 6px #c3c5cf,inset -3px -3px 6px #ffffff}
+#s4 .d-prog i{background:#5b60d6;border-radius:99px}
+#s4 .d-card{background:#e4e6ee;border:none;border-radius:14px;color:#555a70;
+  box-shadow:5px 5px 10px #c3c5cf,-5px -5px 10px #ffffff}
+/* ═══ 05 暗色专业 ═══ */
+#s5 .stage{background:#16181d;border:none}
+#s5 .stage{color:#e6e8ee}
+#s5 .demo>.g-panel{padding:20px;display:flex;flex-direction:column;gap:15px;
+  background:#1e2127;border:1px solid #2c3038;border-radius:14px}
+#s5 .d-links{opacity:.6}
+#s5 .d-btn{background:#3b82f6;color:#fff;border-radius:9px}
+#s5 .d-btn:hover{box-shadow:0 4px 18px #3b82f666;background:#4a8df7}
+#s5 .d-btn.ghost{background:#262a32;color:#cdd2de;border-color:#34394500}
+#s5 .d-input{background:#14161a;border-color:#2f333c;color:#e6e8ee;border-radius:9px}
+#s5 .d-input:focus{border-color:#3b82f6}
+#s5 .d-input::placeholder{color:#5d6370}
+#s5 .d-tog{background:#33363e}#s5 .d-tog.onn{background:#3b82f6}
+#s5 .d-badge{background:#242830;color:#9fb6e8;border-radius:6px}
+#s5 .d-badge:nth-child(2){color:#7fd6a8}
+#s5 .d-prog{background:#272b33;border-radius:99px}#s5 .d-prog i{background:linear-gradient(90deg,#3b82f6,#60a5fa)}
+#s5 .d-card{background:#22252c;border-color:#2d313a;border-radius:11px;color:#c6cbd6}
+
+/* ═══ 06 终端极客 ═══ */
+#s6 .stage{background:#0c0e0c;font-family:var(--mono);border:1px solid #233023}
+#s6 .stage{color:#b8ccae;padding:clamp(16px,3vw,30px)!important}
+#s6 .stage::before{content:"● ● ●";display:block;font-size:10px;letter-spacing:4px;color:#3d5137;margin-bottom:14px}
+#s6 .demo{gap:12px}
+#s6 .d-logo{font-size:12px;color:#7ee787}
+#s6 .d-links{font-family:var(--mono);opacity:.55}
+#s6 .d-nav{border-bottom:1px dashed #2c3a2b;padding-bottom:10px;margin-bottom:2px}
+#s6 .d-h::before{content:"$ ";color:#58a65c}
+#s6 .d-h{font-family:var(--mono);font-weight:600;font-size:clamp(17px,2vw,21px);color:#d7ecd0;letter-spacing:0}
+#s6 .d-p{font-family:var(--mono);opacity:.62;font-size:11.5px}
+#s6 .d-btn{font-family:var(--mono);background:transparent;color:#7ee787;border:1px solid #58a65c;border-radius:0;font-weight:400}
+#s6 .d-btn:hover{background:#58a65c22;transform:none;box-shadow:none}
+#s6 .d-btn.ghost{color:#9db895;border-color:#3a4a38}
+#s6 .d-input{font-family:var(--mono);background:#10140f;border:1px solid #2c3a2b;color:#b8ccae;border-radius:0}
+#s6 .d-input:focus{border-color:#58a65c}
+#s6 .d-tog{background:#1a2018;border:1px solid #3a4a38;width:42px;height:22px}
+#s6 .d-tog.onn{background:#12291a;border-color:#58a65c}#s6 .d-tog.onn::after{background:#7ee787}
+#s6 .d-badge{font-family:var(--mono);background:transparent;border:1px solid #3a4a38;color:#9db895;border-radius:0}
+#s6 .d-prog{height:14px;background:#10140f;border:1px solid #2c3a2b;border-radius:0}
+#s6 .d-prog i{width:64%;background:repeating-linear-gradient(90deg,#58a65c 0 6px,transparent 6px 9px)}
+#s6 .d-card{font-family:var(--mono);background:#11150f;border-color:#253125;border-radius:0;color:#93ab8a}
+#s6 .d-foot{opacity:.55}
+
+/* ═══ 07 黏土拟物 ═══ */
+#s7 .stage{background:linear-gradient(160deg,#fdf0e4,#fbe3ef 55%,#e8e6fd)}
+.clay,.clay-btn{background:linear-gradient(145deg,#fff,#ffe9dc);
+  border-radius:22px;border:none;
+  box-shadow:8px 10px 20px #d88f9e40,-8px -8px 18px #ffffffcc,inset 2px 2px 4px #ffffffb0}
+#s7 .demo>.clay{padding:22px;display:flex;flex-direction:column;gap:16px}
+#s7 .d-nav{padding:14px 18px}
+#s7 .d-logo{color:#8a4b63}
+#s7 .d-h{color:#6d3b52}
+#s7 .d-p{color:#96697d;opacity:1}
+#s7 .d-btn{background:linear-gradient(145deg,#ff9db6,#f4739a);color:#fff;border-radius:999px;font-weight:700;
+  box-shadow:5px 7px 14px #d76a8c59,-5px -5px 12px #ffffffb8,inset 1px 1px 3px #ffffff90}
+#s7 .d-btn:hover{box-shadow:6px 9px 18px #d76a8c70,-5px -5px 12px #ffffffb8}
+#s7 .d-btn.ghost{background:linear-gradient(145deg,#cdc4ff,#b1a5f5);box-shadow:5px 7px 14px #8d80d059,-5px -5px 12px #ffffffb8}
+#s7 .d-input{background:#fdf1ea;border:none;color:#6d3b52;border-radius:16px;
+  box-shadow:inset 4px 5px 9px #e3b7c4,inset -4px -4px 8px #fff}
+#s7 .d-input::placeholder{color:#bb92a3}
+#s7 .d-tog{background:#fdf1ea;box-shadow:inset 4px 4px 8px #e3b7c4,inset -4px -4px 8px #fff}
+#s7 .d-tog.onn::after{background:linear-gradient(145deg,#ff9db6,#f4739a)}
+#s7 .d-badge{background:#fff;color:#8a4b63;border-radius:999px;box-shadow:3px 4px 8px #d88f9e40,-3px -3px 7px #fff}
+#s7 .d-prog{background:#fdf1ea;height:12px;border-radius:99px;box-shadow:inset 3px 4px 7px #e3b7c4,inset -3px -3px 6px #fff}
+#s7 .d-prog i{background:linear-gradient(90deg,#ff9db6,#f4739a);border-radius:99px}
+#s7 .d-card{background:linear-gradient(145deg,#fff,#ffece2);border:none;border-radius:20px;color:#8a5c6f;
+  box-shadow:6px 8px 16px #d88f9e40,-6px -6px 14px #ffffffcc}
+
+/* ═══ 08 极简编辑 ═══ */
+#s8 .stage{background:#fbfaf7;border:none;border-left:1px solid var(--line)}
+#s8 .demo{gap:16px;font-family:var(--serif)}
+#s8 .d-nav{border-bottom:1px solid #dcd8cd;padding-bottom:12px;margin-bottom:4px}
+#s8 .d-links{font-size:11px;letter-spacing:.04em}
+#s8 .d-h{font-family:var(--serif);font-weight:700;font-size:clamp(22px,2.8vw,29px);line-height:1.25}
+#s8 .d-p{font-size:13px;line-height:1.75;opacity:.78}
+#s8 .d-btn{background:#17140f;border-radius:2px;font-weight:500;font-size:12px;letter-spacing:.03em}
+#s8 .d-btn:hover{transform:none;box-shadow:none;text-decoration:underline;text-underline-offset:4px}
+#s8 .d-btn.ghost{background:transparent;color:#17140f;border:1px solid #cfcaba}
+#s8 .d-input{border:none;border-bottom:1px solid #b9b3a2;border-radius:0;background:transparent;font-family:var(--serif)}
+#s8 .d-tog{background:#d8d3c4}#s8 .d-tog.onn{background:#17140f}
+#s8 .d-badge{background:transparent;border:1px solid #c9c3b2;color:#5c5749;border-radius:2px;font-weight:500}
+#s8 .d-prog{background:#e8e4d8;border-radius:0}
+#s8 .d-card{background:transparent;border:none;border-top:1px solid #dcd8cd;border-radius:0;padding:14px 0 0}
+/* ═══ 09 复古未来主义 ═══ */
+#s9 .stage{background:#1a1f71;
+  background-image:radial-gradient(ellipse at 50% -20%,#3d51c4 0%,transparent 60%),linear-gradient(#1a1f71,#12164d)}
+#s9 .stage{color:#e8e9ff}
+.retro-frame{background:#232a8a;border:2px solid #6478ff;border-radius:10px;
+  box-shadow:0 0 0 2px #12164d,0 0 24px #4c63ff55,inset 0 0 18px #4c63ff26}
+#s9 .demo>.retro-frame{padding:22px;display:flex;flex-direction:column;gap:16px}
+#s9 .d-nav{border-bottom:1px solid #6478ff66;padding-bottom:12px}
+#s9 .d-logo{text-shadow:0 0 8px #7c8cff}
+#s9 .d-h{text-shadow:0 0 14px #5b6dffcc;color:#dfe3ff}
+#s9 .d-p{opacity:.78}
+#s9 .d-btn{background:linear-gradient(180deg,#7c8cff,#4c5fe0);color:#fff;border-radius:6px;
+  border:1px solid #9daaff;box-shadow:0 0 12px #4c63ff88;text-shadow:0 0 6px #ffffffaa}
+#s9 .d-btn:hover{box-shadow:0 0 22px #7c8cffcc}
+#s9 .d-btn.ghost{background:#232a8a99;color:#b9c4ff}
+#s9 .d-input{background:#141a5e;border:1px solid #6478ff;color:#dfe3ff;border-radius:6px;box-shadow:inset 0 0 10px #00000059}
+#s9 .d-input::placeholder{color:#8890d8}
+#s9 .d-tog{background:#141a5e;border:1px solid #6478ff}
+#s9 .d-tog.onn{background:#2c36a8;border-color:#9daaff}#s9 .d-tog.onn::after{background:#aeb8ff;box-shadow:0 0 10px #aeb8ff}
+#s9 .d-badge{background:#232a8a;border:1px solid #6478ff;color:#b9c4ff;border-radius:4px;text-transform:uppercase}
+#s9 .d-prog{background:#141a5e;border:1px solid #6478ff;height:12px}
+#s9 .d-prog i{background:linear-gradient(90deg,#4c5fe0,#9daaff);box-shadow:0 0 10px #7c8cff}
+#s9 .d-card{background:#20268466;border-color:#6478ff59;border-radius:8px;color:#c3cbff}
+
+/* ═══ 10 便当盒网格 ═══ */
+#s10 .stage{background:#ececea;border:none}
+#s10 .demo{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;max-width:600px}
+#s10 .cell{background:#fff;border-radius:18px;padding:16px;display:flex;flex-direction:column;justify-content:center;min-height:74px}
+#s10 .cell.wide{grid-column:span 2}
+#s10 .cell.tall{grid-row:span 2}
+#s10 .cell.accent{background:#17140f;color:#fff}
+#s10 .cell.accent .d-btn{background:#fff;color:#111;margin-top:8px}
+#s10 .cell.soft{background:#ffe9d6}
+#s10 .cell h4{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;opacity:.55;margin-bottom:6px}
+#s10 .cell .big{font-size:clamp(19px,2.2vw,25px);font-weight:700;letter-spacing:-.02em;line-height:1.05}
+#s10 .cell .sub{font-size:11px;opacity:.6;margin-top:4px}
+#s10 .cell .d-prog{width:100%}
+
+/* ═══ 11 材料设计 ═══ */
+#s11 .stage{background:#eef1f5;border:none}
+.md-elev{box-shadow:0 1px 3px #0000001f,0 1px 2px #0000003d}
+.md-elev2{box-shadow:0 3px 6px #0000001f,0 3px 6px #00000029}
+#s11 .demo>.md-elev2{background:#fff;padding:20px;display:flex;flex-direction:column;gap:15px;border-radius:14px}
+#s11 .d-nav{padding:12px 16px;background:#6750a4;border-radius:28px;color:#fff;margin-bottom:2px}
+#s11 .d-links{opacity:.85}
+#s11 .d-btn{background:#6750a4;border-radius:999px;font-weight:600;font-size:13px;padding:10px 22px}
+#s11 .d-btn:hover{box-shadow:0 2px 8px #6750a455}
+#s11 .d-btn.ghost{background:transparent;color:#6750a4;border:1px solid #cac4d0}
+#s11 .d-input{background:#f3edf7;border:none;border-bottom:2px solid #cac4d0;border-radius:8px 8px 0 0;color:#1c1b1f}
+#s11 .d-input:focus{border-bottom-color:#6750a4}
+#s11 .d-input::placeholder{color:#79747e}
+#s11 .d-tog{background:#79747e;width:46px;height:26px}
+#s11 .d-tog.onn{background:#6750a4}#s11 .d-tog.onn::after{width:18px;height:18px;left:23px;top:2.5px}
+#s11 .d-badge{background:#f3edf7;color:#4a4458;border-radius:8px}
+#s11 .d-prog{height:8px;background:#e7e0ec}
+#s11 .d-prog i{background:#6750a4}
+#s11 .d-card{border-radius:14px;color:#49454f}
+
+/* ═══ 12 Y2K 千禧 cyber ═══ */
+#s12 .stage{background:
+  repeating-linear-gradient(0deg,transparent 0 39px,#ffffff0d 39px 40px),
+  repeating-linear-gradient(90deg,transparent 0 39px,#ffffff0d 39px 40px),
+  linear-gradient(160deg,#3d00c8,#8a2be2 50%,#ff77e1)}
+#s12 .stage{color:#fff}
+.y2k-chrome{background:linear-gradient(135deg,#ffffffd9,#dfe6ff66 40%,#b9c8ff8c);
+  border:1px solid #ffffffb0;border-radius:16px;
+  box-shadow:0 8px 30px #2a006659,inset 0 1px 0 #fff}
+#s12 .demo>.y2k-chrome{padding:22px;display:flex;flex-direction:column;gap:15px;color:#2b1055}
+#s12 .y2k-chrome .d-p{opacity:.75}
+#s12 .d-nav{border-bottom:1px solid #b9a8ff66;padding-bottom:11px}
+#s12 .d-btn{background:linear-gradient(135deg,#b9e8ff,#7fb2ff);color:#1b2a6b;border-radius:999px;
+  border:2px solid #fff;box-shadow:0 4px 14px #4b1fa888,inset 0 1px 2px #ffffffcc;font-weight:700}
+#s12 .d-btn:hover{transform:translateY(-1px) scale(1.02)}
+#s12 .d-btn.ghost{background:linear-gradient(135deg,#ffd1f0,#ff9ade);color:#7a1b5e}
+#s12 .d-input{background:#ffffffcc;border:2px solid #9f8cff;border-radius:12px;color:#2b1055}
+#s12 .d-input:focus{border-color:#ff77e1}
+#s12 .d-tog{background:#cabfff;border:2px solid #fff;width:46px;height:24px}
+#s12 .d-tog.onn{background:linear-gradient(90deg,#7fb2ff,#ff9ade)}
+#s12 .d-badge{background:linear-gradient(135deg,#b9e8ff,#ffd1f0);color:#3a2a7a;border:1.5px solid #fff;border-radius:999px}
+#s12 .d-prog{height:14px;background:#cabfff99;border:2px solid #fff}
+#s12 .d-prog i{background:repeating-linear-gradient(90deg,#7fb2ff 0 8px,#ff9ade 8px 16px)}
+
+/* ═══ 13 有机柔和 ═══ */
+#s13 .stage{background:linear-gradient(165deg,#eaf6ee,#fdf6ec)}
+.org-panel{background:#ffffffd9;border-radius:32px 32px 32px 8px;border:1px solid #dbeadd;
+  box-shadow:0 14px 34px #9db8a633}
+#s13 .demo>.org-panel{padding:24px;display:flex;flex-direction:column;gap:16px}
+#s13 .d-logo{color:#2f6d4f}
+#s13 .d-h{color:#26493a;font-size:clamp(21px,2.6vw,27px)}
+#s13 .d-p{color:#5c7263;opacity:1}
+#s13 .d-links{color:#41705a}
+#s13 .d-btn{background:#2f855a;border-radius:999px 999px 999px 6px;font-weight:600;
+  box-shadow:0 6px 16px #2f855a44}
+#s13 .d-btn:hover{transform:translateY(-2px)}
+#s13 .d-btn.ghost{background:#fff;color:#2f6d4f;border:1.5px solid #bcd6c6;box-shadow:none}
+#s13 .d-input{background:#fff;border:1.5px solid #cfe2d5;border-radius:18px 18px 18px 6px;color:#26493a}
+#s13 .d-input:focus{border-color:#2f855a}
+#s13 .d-input::placeholder{color:#94ac9d}
+#s13 .d-tog{background:#d5e6db}
+#s13 .d-tog.onn{background:#57a97b}
+#s13 .d-badge{background:#e3f1e8;color:#2f6d4f;border-radius:999px}
+#s13 .d-badge:nth-child(2){background:#fdeedd;color:#a0622d}
+#s13 .d-prog{background:#dcebe1;border-radius:99px;height:10px}
+#s13 .d-prog i{background:linear-gradient(90deg,#57a97b,#8fc7a5);border-radius:99px}
+#s13 .d-card{background:#f4faf6;border-color:#e2efe7;border-radius:22px 22px 22px 8px;color:#4a6355}
+
+@media(max-width:900px){
+  .exhibit{grid-template-columns:1fr}
+  .spec{grid-template-columns:1fr 1fr}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.001s!important;transition-duration:.001s!important}
+}
+footer{border-top:1px solid var(--line);padding:34px 0 60px;font-size:12px;color:var(--muted)}
+footer p{max-width:70ch;line-height:1.8}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+  <p class="kicker">Interface Style Atlas — Vol.01</p>
+  <h1>界面设计<br><em>风格图鉴</em></h1>
+  <p class="lede">13 种主流 UI 设计风格的<b>活体样本</b>。每一种都使用同一套组件基线——导航、标题、按钮、输入框、开关、徽章、进度条、卡片——让你直接对比不同设计语言在相同信息结构下的表达差异。</p>
+</header>
+</div>
+<nav class="indexbar" aria-label="风格索引"><div class="wrap"><div class="row">
+<a class="chip" href="#s1">01 瑞士国际</a><a class="chip" href="#s2">02 新粗野</a><a class="chip" href="#s3">03 玻璃拟态</a><a class="chip" href="#s4">04 新拟物</a><a class="chip" href="#s5">05 暗色专业</a><a class="chip" href="#s6">06 终端极客</a><a class="chip" href="#s7">07 黏土拟物</a><a class="chip" href="#s8">08 极简编辑</a><a class="chip" href="#s9">09 复古未来</a><a class="chip" href="#s10">10 便当盒</a><a class="chip" href="#s11">11 材料设计</a><a class="chip" href="#s12">12 Y2K 赛博</a><a class="chip" href="#s13">13 有机柔和</a>
+</div></div></nav>
+<main class="wrap gallery">
+<article class="exhibit" id="s1">
+  <div class="meta">
+    <p class="num">EXHIBIT 01</p>
+    <h2>瑞士国际主义<span>Swiss / International Typographic Style</span></h2>
+    <p class="desc">网格、无衬线、不对称版式与高饱和单色强调。信息层级全靠字重与留白，装饰归零。</p>
+    <ul class="spec">
+      <li><b>年代</b>1950s 至今</li>
+      <li><b>圆角</b>0px（锐利）</li>
+      <li><b>阴影</b>几乎不用</li>
+      <li><b>配色</b>纸白 + 黑 + 信号红</li>
+      <li><b>字体</b>Helvetica 系</li>
+      <li><b>适用</b>编辑、作品集、展览</li>
+    </ul>
+  </div>
+  <div class="stage"><div class="demo">
+    <div class="d-nav"><span class="d-logo">HELVETICA*</span><nav class="d-links"><span>Work</span><span>About</span><span>Contact</span></nav></div>
+    <div><h3 class="d-h">Less, but better</h3><p class="d-p">网格是骨架，字体是声音。所有层级由字号、字重与对齐完成，不依赖任何装饰元素。</p></div>
+    <div class="d-row"><button class="d-btn">查看项目</button><button class="d-btn ghost">阅读宣言</button></div>
+    <div class="d-row"><input class="d-input" placeholder="订阅通讯…"><div class="d-tog onn" role="switch" aria-checked="true" tabindex="0"></div></div>
+    <div class="d-badges"><span class="d-badge">GRID</span><span class="d-badge">TYPE</span></div>
+    <div class="d-prog"><i></i></div>
+    <div class="d-card">「平面设计的秩序感来自严格的网格系统——12 栏，8pt 基线。」</div>
+  </div></div>
+</article>
+
+<article class="exhibit" id="s2">
+  <div class="meta">
+    <p class="num">EXHIBIT 02</p>
+    <h2>新粗野主义<span>Neo-Brutalism</span></h2>
+    <p class="desc">反精致宣言：粗黑描边、硬阴影、荧光撞色。故意「笨拙」，用原始的诚实对抗千篇一律的圆角 SaaS 审美。</p>
+    <ul class="spec">
+      <li><b>年代</b>2016 复兴 / 2022 爆发</li>
+      <li><b>圆角</b>0–4px</li>
+      <li><b>阴影</b>实色偏移（无模糊）</li>
+      <li><b>配色</b>荧光黄 × 粉 × 紫</li>
+      <li><b>字体</b>超粗无衬线</li>
+      <li><b>适用</b>创意工具、独立产品、活动页</li>
+    </ul>
+  </div>
+  <div class="stage"><div class="demo">
+    <div class="d-nav"><span class="d-logo">BRUT★L</span><nav class="d-links"><span>Shop</span><span>Manifesto</span><span>Cart (3)</span></nav></div>
+    <div><h3 class="d-h">No rounded corners.</h3><p class="d-p">边框就是边框，阴影就是阴影。设计不装模作样，按钮看起来就像能按下去的实体块。</p></div>
+    <div class="d-row"><button class="d-btn">立即购买 →</button><button class="d-btn ghost">加入购物车</button></div>
+    <div class="d-row"><input class="d-input" placeholder="搜索商品…"><div class="d-tog onn" role="switch" aria-checked="true" tabindex="0"></div></div>
+    <div class="d-badges"><span class="d-badge">NEW!</span><span class="d-badge">-50% OFF</span><span class="d-badge">FREE SHIP</span></div>
+    <div class="d-prog"><i></i></div>
+    <div class="d-card">库存警告：这个卡片还剩 2 件！粗黑边框 + 硬投影 = 可点击的安全感。</div>
+  </div></div>
+</article>
+
+<article class="exhibit" id="s3">
+  <div class="meta">
+    <p class="num">EXHIBIT 03</p>
+    <h2>玻璃拟态<span>Glassmorphism</span></h2>
+    <p class="desc">毛玻璃面板悬浮于彩色光斑之上——半透明背景、背景模糊、细白描边与柔和投影共同营造景深。</p>
+    <ul class="spec">
+      <li><b>年代</b>2020–（Apple 引领）</li>
+      <li><b>圆角</b>16–24px</li>
+      <li><b>阴影</b>大范围柔光</li>
+      <li><b>配色</b>深底 + 紫/绿光斑</li>
+      <li><b>关键</b>backdrop-filter: blur</li>
+      <li><b>适用</b>媒体、金融仪表盘、iOS 风 App</li>
+    </ul>
+  </div>
+  <div class="stage"><div class="demo glass" style="padding:22px;display:flex;flex-direction:column;gap:15px">
+    <div class="d-nav"><span class="d-logo">Aurora OS</span><nav class="d-links"><span>Discover</span><span>Library</span><span>Profile</span></nav></div>
+    <div><h3 class="d-h">Frosted depth, layered light</h3><p class="d-p">面板像结了雾的玻璃：底层色彩透出来，前景内容依然清晰可读。层次靠透明度表达。</p></div>
+    <div class="d-row"><button class="d-btn">开始体验</button><button class="d-btn ghost">了解更多</button></div>
+    <div class="d-row"><input class="d-input" placeholder="搜索音乐…"><div class="d-tog onn" role="switch" aria-checked="true" tabindex="0"></div></div>
+    <div class="d-badges"><span class="d-badge">SPATIAL</span><span class="d-badge">BLUR 16PX</span></div>
+    <div class="d-prog"><i></i></div>
+    <div class="d-card">毛玻璃卡片：注意文字与背景始终保持 4.5:1 以上对比度。</div>
+  </div></div>
+</article>
+
+<article class="exhibit" id="s4">
+  <div class="meta">
+    <p class="num">EXHIBIT 04</p>
+    <h2>新拟物化<span>Neumorphism / Soft UI</span></h2>
+    <p class="desc">组件从同色背景中「挤出」：双光源投影制造凸起，内凹阴影制造按压。质感极强但对比度低——只适合辅助界面。</p>
+    <ul class="spec">
+      <li><b>年代</b>2019–2021（短命网红）</li>
+      <li><b>圆角</b>12–16px</li>
+      <li><b>阴影</b>双向（亮 + 暗）</li>
+      <li><b>配色</b>单一浅灰紫底</li>
+      <li><b>教训</b>对比度不足 AA，慎用于正文</li>
+      <li><b>适用</b>智能家居、音乐播放器点缀</li>
+    </ul>
+  </div>
+  <div class="stage"><div class="demo neu-raised">
+    <div class="d-nav neu-raised"><span class="d-logo">Soft UI</span><nav class="d-links"><span>Routine</span><span>Devices</span></nav></div>
+    <div><h3 class="d-h">Extruded from the surface</h3><p class="d-p">控件仿佛从面板上压模而出：凸起代表可交互，凹陷代表正在输入或已激活。</p></div>
+    <div class="d-row"><button class="d-btn pressed">已按下</button><button class="d-btn ghost">凸起态</button></div>
+    <div class="d-row"><input class="d-input neu-inset" placeholder="凹陷的输入框…"><div class="d-tog onn" role="switch" aria-checked="true" tabindex="0"></div></div>
+    <div class="d-badges"><span class="d-badge">SOFT</span><span class="d-badge">DUAL LIGHT</span></div>
+    <div class="d-prog"><i></i></div>
+    <div class="d-card">同色系卡片：注意它必须依靠阴影而非颜色来区分层级。</div>
+  </div></div>
+</article>
+
+<article class="exhibit" id="s5">
+  <div class="meta">
+    <p class="num">EXHIBIT 05</p>
+    <h2>暗色专业<span>Dark Professional / SaaS Dark</span></h2>
+    <p class="desc">当代开发者工具的主流形态：近黑分层表面、低饱和灰阶文本、单一品牌强调色、克制的辉光反馈。</p>
+    <ul class="spec">
+      <li><b>年代</b>2016– 主流化</li>
+      <li><b>圆角</b>8–14px</li>
+      <li><b>阴影</b>深色柔光 / 辉光</li>
+      <li><b>配色</b>#16181d 底 + 蓝强调</li>
+      <li><b>要点</b>层级靠表面明度差</li>
+      <li><b>适用</b>IDE、监控台、开发者平台</li>
+    </ul>
+  </div>
+  <div class="stage"><div class="demo g-panel">
+    <div class="d-nav"><span class="d-logo">⌘ Deploy</span><nav class="d-links"><span>Pipelines</span><span>Logs</span><span>Settings</span></nav></div>
+    <div><h3 class="d-h">Surface hierarchy, not decoration</h3><p class="d-p">暗色模式下不用纯黑：#16181d 打底，逐层提亮表面区分层级。强调色只给主操作。</p></div>
+    <div class="d-row"><button class="d-btn">部署到生产</button><button class="d-btn ghost">预览环境</button></div>
+    <div class="d-row"><input class="d-input" placeholder="过滤服务…"><div class="d-tog onn" role="switch" aria-checked="true" tabindex="0"></div></div>
+    <div class="d-badges"><span class="d-badge">● RUNNING</span><span class="d-badge">✓ HEALTHY</span></div>
+    <div class="d-progress d-prog"><i></i></div>
+    <div class="d-card">构建 #4821 — 12 个服务全部通过健康检查。暗色界面文本不低于 #e6e8ee。</div>
+  </div></div>
+</article>
+<article class="exhibit" id="s6">
+  <div class="meta">
+    <p class="num">EXHIBIT 06</p>
+    <h2>终端极客<span>Terminal / Hacker Aesthetic</span></h2>
+    <p class="desc">等宽字体、磷光绿、方括号与命令行隐喻。信息密度极高，装饰为零，一切皆文本。</p>
+    <ul class="spec">
+      <li><b>年代</b>1970s 血统 · 永恒小众</li>
+      <li><b>圆角</b>0px</li>
+      <li><b>阴影</b>无</li>
+      <li><b>配色</b>近黑底 + 磷光绿</li>
+      <li><b>字体</b>JetBrains Mono 全等宽</li>
+      <li><b>适用</b>CLI 工具、开发者文档、黑客松</li>
+    </ul>
+  </div>
+  <div class="stage"><div class="demo">
+    <div class="d-nav"><span class="d-logo">[root@atlas ~]</span><nav class="d-links"><span>./docs</span><span>./src</span><span>./git</span></nav></div>
+    <div><h3 class="d-h">cat style-guide.txt</h3><p class="d-p">&gt; 一切皆为文本流。层级由缩进、前缀符号与大小写完成。闪烁的光标是唯一的动画。</p></div>
+    <div class="d-row"><button class="d-btn">[ 执行 ]</button><button class="d-btn ghost">[--dry-run]</button></div>
+    <div class="d-row"><input class="d-input" placeholder="$ grep -r 'style' ./"><div class="d-tog onn" role="switch" aria-checked="true" tabindex="0"></div></div>
+    <div class="d-badges"><span class="d-badge">[v2.4.1]</span><span class="d-badge">[MIT]</span></div>
+    <div class="d-prog"><i></i></div>
+    <div class="d-card">$ tail -f design.log<br>&gt; 方括号是按钮，下划线是链接，进度条是字符画。返璞归真。</div>
+  </div></div>
+</article>
+
+<article class="exhibit" id="s7">
+  <div class="meta">
+    <p class="num">EXHIBIT 07</p>
+    <h2>黏土拟物<span>Claymorphism</span></h2>
+    <p class="desc">软糖般的立体感：大圆角 + 双层投影（外柔光 + 内高光）+ 糖果色渐变，像捏出来的黏土玩具。</p>
+    <ul class="spec">
+      <li><b>年代</b>2021–2023</li>
+      <li><b>圆角</b>18–32px</li>
+      <li><b>阴影</b>外柔影 + 内高光双层</li>
+      <li><b>配色</b>蜜桃 × 樱粉 × 香芋紫</li>
+      <li><b>要点</b>比新拟物对比度更好</li>
+      <li><b>适用</b>儿童产品、NFT、轻松社交 App</li>
+    </ul>
+  </div>
+  <div class="stage"><div class="demo clay">
+    <div class="d-nav clay"><span class="d-logo">🧸 Plushly</span><nav class="d-links"><span>玩具屋</span><span>朋友</span></nav></div>
+    <div><h3 class="d-h">Soft like a marshmallow</h3><p class="d-p">按钮像可以捏的果冻：按下去会回弹。圆润不是装饰，是「无害」的信号。</p></div>
+    <div class="d-row"><button class="d-btn">捏我一下</button><button class="d-btn ghost">换个颜色</button></div>
+    <div class="d-row"><input class="d-input" placeholder="给小熊起个名字…"><div class="d-tog onn" role="switch" aria-checked="true" tabindex="0"></div></div>
+    <div class="d-badges"><span class="d-badge">SOFT 3D</span><span class="d-badge">CANDY</span></div>
+    <div class="d-prog"><i></i></div>
+    <div class="d-card">黏土卡片：外层柔影撑起体积，内层高光模拟顶光，双层缺一不可。</div>
+  </div></div>
+</article>
+
+<article class="exhibit" id="s8">
+  <div class="meta">
+    <p class="num">EXHIBIT 08</p>
+    <h2>极简编辑<span>Minimal Editorial</span></h2>
+    <p class="desc">数字杂志排版：衬线大标题、细分割线、大量留白。几乎不使用阴影与色块——层级全靠字体排印本身。</p>
+    <ul class="spec">
+      <li><b>年代</b>永恒（报纸血统）</li>
+      <li><b>圆角</b>0–2px</li>
+      <li><b>阴影</b>无（用细线分隔）</li>
+      <li><b>配色</b>暖白 + 墨黑双色</li>
+      <li><b>字体</b>衬线标题 + 无衬线 UI</li>
+      <li><b>适用</b>媒体、博客、高端品牌官网</li>
+    </ul>
+  </div>
+  <div class="stage"><div class="demo">
+    <div class="d-nav"><span class="d-logo">The Review</span><nav class="d-links"><span>文化</span><span>科技</span><span>专栏</span></nav></div>
+    <div><h3 class="d-h">Typography is the interface</h3><p class="d-p">当排版足够好，就不需要任何装饰。标题用衬线体建立权威感，正文保持 65–75 字符的舒适行长。</p></div>
+    <div class="d-row"><button class="d-btn">订阅全年</button><button class="d-btn ghost">试读一期</button></div>
+    <div class="d-row"><input class="d-input" placeholder="搜索往期文章…"><div class="d-tog" role="switch" aria-checked="false" tabindex="0"></div></div>
+    <div class="d-badges"><span class="d-badge">ISSUE 42</span><span class="d-badge">长文</span></div>
+    <div class="d-prog"><i></i></div>
+    <div class="d-card">阅读进度条是本页唯一的动态元素——克制本身就是一种奢华。</div>
+  </div></div>
+</article>
+<article class="exhibit" id="s9">
+  <div class="meta">
+    <p class="num">EXHIBIT 09</p>
+    <h2>复古未来主义<span>Retro-Futurism / Outrun Interface</span></h2>
+    <p class="desc">80 年代科幻控制台的想象：深蓝底、霓虹辉光、发光描边。像《银翼杀手》里按下去会「嘀」一声的面板。</p>
+    <ul class="spec">
+      <li><b>年代</b>1982 想象的 2019</li>
+      <li><b>圆角</b>4–10px</li>
+      <li><b>阴影</b>彩色辉光 box-shadow</li>
+      <li><b>配色</b>深钴蓝 × 电光紫</li>
+      <li><b>要点</b>text-shadow 制造 CRT 泛光</li>
+      <li><b>适用</b>游戏、音乐、主题活动页</li>
+    </ul>
+  </div>
+  <div class="stage"><div class="demo retro-frame">
+    <div class="d-nav"><span class="d-logo">◈ NEXUS-7</span><nav class="d-links"><span>主控</span><span>导航</span><span>能源</span></nav></div>
+    <div><h3 class="d-h">SYSTEM ONLINE_</h3><p class="d-p">每个控件都连着背光：按钮按下时泛起电弧，进度条是反应堆功率。界面即驾驶舱。</p></div>
+    <div class="d-row"><button class="d-btn">启动引擎</button><button class="d-btn ghost">自检程序</button></div>
+    <div class="d-row"><input class="d-input" placeholder="输入访问代码…"><div class="d-tog onn" role="switch" aria-checked="true" tabindex="0"></div></div>
+    <div class="d-badges"><span class="d-badge">PWR 87%</span><span class="d-badge">LINK OK</span></div>
+    <div class="d-prog"><i></i></div>
+    <div class="d-card">// 反应堆输出稳定 —— 辉光强度与状态严重性挂钩，别让整个界面都在发光。</div>
+  </div></div>
+</article>
+
+<article class="exhibit" id="s10">
+  <div class="meta">
+    <p class="num">EXHIBIT 10</p>
+    <h2>便当盒网格<span>Bento Grid / Bento Box Layout</span></h2>
+    <p class="desc">信息装进大小不一的圆角格子里，像日式便当：一屏之内高密度陈列，每格自成一体又互相咬合。</p>
+    <ul class="spec">
+      <li><b>年代</b>2022– 爆红（Apple 发布页带火）</li>
+      <li><b>圆角</b>16–24px</li>
+      <li><b>阴影</b>极浅或无，靠留白分隔</li>
+      <li><b>配色</b>白/浅灰底 + 少量强调格</li>
+      <li><b>要点</b>跨行跨列制造视觉锚点</li>
+      <li><b>适用</b>个人主页、产品特性总览、仪表盘</li>
+    </ul>
+  </div>
+  <div class="stage"><div class="demo bento">
+    <div class="cell wide accent"><h4>当前项目</h4><p class="big">Style Atlas v1.0</p><button class="d-btn">打开面板 →</button></div>
+    <div class="cell tall soft"><h4>本周焦点</h4><p class="big">13 种风格全部归档完成</p><p class="sub">从瑞士国际到有机柔和，组件基线已统一。</p><div class="d-prog"><i style="width:100%"></i></div></div>
+    <div class="cell"><h4>待办</h4><p class="big">3 项</p><p class="sub">2 个评审 · 1 个交付</p></div>
+    <div class="cell"><h4>团队在线</h4><p class="big">8 人</p><div class="d-tog onn" role="switch" aria-checked="true" tabindex="0"></div></div>
+    <div class="cell wide"><h4>通知中心</h4><span class="d-badge">NEW</span><span class="d-badge">v2.4.1 已发布</span><span class="d-badge">维护公告</span></div>
+  </div></div>
+</article>
+
+<article class="exhibit" id="s11">
+  <div class="meta">
+    <p class="num">EXHIBIT 11</p>
+    <h2>材料设计<span>Material Design 3</span></h2>
+    <p class="desc">Google 的物理隐喻体系：纸片层叠、真实投影、药丸形按钮、动态色彩。规则最完备、生态最成熟的设计语言。</p>
+    <ul class="spec">
+      <li><b>年代</b>2014 / M3 于 2021</li>
+      <li><b>圆角</b>8–28px（形状分级）</li>
+      <li><b>阴影</b>高度系统（elevation 0–5）</li>
+      <li><b>配色</b>种子色生成 tonal 调色板</li>
+      <li><b>字体</b>Roboto / Noto 全家桶</li>
+      <li><b>适用</b>Android、跨平台一致性问题</li>
+    </ul>
+  </div>
+  <div class="stage"><div class="demo md-elev2">
+    <div class="d-nav"><span class="d-logo">Material You</span><nav class="d-links"><span>首页</span><span>资料库</span></nav></div>
+    <div><h3 class="d-h">Paper with physics</h3><p class="d-p">表面有「高度」：越重要的浮得越高，投影越明显。FAB 药丸形是可发现性的妥协。</p></div>
+    <div class="d-row"><button class="d-btn">新建文档</button><button class="d-btn ghost">浏览模板</button></div>
+    <div class="d-row"><input class="d-input" placeholder="搜索云端硬盘…"><div class="d-tog onn" role="switch" aria-checked="true" tabindex="0"></div></div>
+    <div class="d-badges"><span class="d-badge">ELEVATION 2</span><span class="d-badge">TONAL</span></div>
+    <div class="d-prog"><i></i></div>
+    <div class="d-card">填充式文本框：淡紫底色提示可交互区域，底部 2px 线条承载焦点态。</div>
+  </div></div>
+</article>
+<article class="exhibit" id="s12">
+  <div class="meta">
+    <p class="num">EXHIBIT 12</p>
+    <h2>Y2K 千禧赛博<span>Y2K / Cyber Millennium</span></h2>
+    <p class="desc">千禧年的乐观科技幻想：铬金属渐变、糖果紫粉、网格地平线、半透明「果冻」质感。复古但毫不怀旧——它相信未来会很闪。</p>
+    <ul class="spec">
+      <li><b>年代</b>1997–2004 / 2022 复兴</li>
+      <li><b>圆角</b>12–20px（药丸/气泡）</li>
+      <li><b>阴影</b>彩色投影 + 内高光</li>
+      <li><b>配色</b>电紫 × 桃粉 × 冰蓝</li>
+      <li><b>要点</b>金属渐变 + 白描边 = 铬感</li>
+      <li><b>适用</b>潮流品牌、音乐、虚拟偶像</li>
+    </ul>
+  </div>
+  <div class="stage"><div class="demo y2k-chrome">
+    <div class="d-nav"><span class="d-logo">✦ CYBER*GRL ✦</span><nav class="d-links"><span>商店</span><span>壁纸</span><span>QQ 群</span></nav></div>
+    <div><h3 class="d-h">Welcome 2 the future!</h3><p class="d-p">拨号上网时代的太空梦：所有东西都像塑料玩具——半透明、发光、摸起来咔哒作响。</p></div>
+    <div class="d-row"><button class="d-btn">立即下载 ♪</button><button class="d-btn ghost">加入会员</button></div>
+    <div class="d-row"><input class="d-input" placeholder="输入你的 MSN…"><div class="d-tog onn" role="switch" aria-checked="true" tabindex="0"></div></div>
+    <div class="d-badges"><span class="d-badge">★ NEW ★</span><span class="d-badge">MP3 铃声</span></div>
+    <div class="d-prog"><i></i></div>
+    <div class="d-card">铬金属面板：白描边 + 多段浅色渐变 + 彩色外影，三层叠加才有「液态金属」感。</div>
+  </div></div>
+</article>
+
+<article class="exhibit" id="s13">
+  <div class="meta">
+    <p class="num">EXHIBIT 13</p>
+    <h2>有机柔和<span>Organic Soft / Wellness UI</span></h2>
+    <p class="desc">健康与可持续产品的语言：鼠尾草绿 + 奶油底、不对称大圆角（像被风吹圆的鹅卵石）、低刺激的动效与插画。</p>
+    <ul class="spec">
+      <li><b>年代</b>2020– 与 wellness 浪潮同步</li>
+      <li><b>圆角</b>20–32px 不对称分布</li>
+      <li><b>阴影</b>极浅漫射，无锐利边缘</li>
+      <li><b>配色</b>鼠尾草绿 × 燕麦奶油 × 陶土橙</li>
+      <li><b>要点</b>圆角方向暗示流动感</li>
+      <li><b>适用</b>冥想 App、医疗健康、环保品牌</li>
+    </ul>
+  </div>
+  <div class="stage"><div class="demo org-panel">
+    <div class="d-nav"><span class="d-logo">🌿 Fern</span><nav class="d-links"><span>今日</span><span>花园</span><span>睡眠</span></nav></div>
+    <div><h3 class="d-h">Breathe in, breathe out</h3><p class="d-p">界面应该像一次深呼吸：没有刺眼的对比，没有急促的动画。圆角的不对称让视线自然流动。</p></div>
+    <div class="d-row"><button class="d-btn">开始冥想</button><button class="d-btn ghost">听听雨声</button></div>
+    <div class="d-row"><input class="d-input" placeholder="记录此刻的心情…"><div class="d-tog onn" role="switch" aria-checked="true" tabindex="0"></div></div>
+    <div class="d-badges"><span class="d-badge">平静</span><span class="d-badge">专注 25min</span></div>
+    <div class="d-prog"><i></i></div>
+    <div class="d-card">本周情绪曲线平稳向上——绿色系将压力感知降到最低，留白即疗愈。</div>
+  </div></div>
+</article>
+
+</main>
+<div class="wrap"><footer>
+  <p><b>阅读方式：</b>每个展台左侧是风格档案（年代 · 圆角 · 阴影 · 配色策略 · 适用场景），右侧是该风格渲染的同一组件基线。所有文本对比度均满足 WCAG AA；动画已适配 prefers-reduced-motion。</p>
+  <p style="margin-top:10px">UI Style Atlas · 单文件交付 · 无构建依赖 · 可直接离线打开</p>
+</footer></div>
+<script>
+// 开关：点击 + 键盘可用
+document.querySelectorAll('.d-tog').forEach(t => {
+  const flip = () => {
+    const on = t.classList.toggle('onn');
+    t.setAttribute('aria-checked', on);
+  };
+  t.addEventListener('click', flip);
+  t.addEventListener('keydown', e => {
+    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); flip(); }
+  });
+});
+
+// 索引条滚动高亮（Scrollspy）
+const chips = [...document.querySelectorAll('.indexbar .chip')];
+const spy = new IntersectionObserver(entries => {
+  entries.forEach(en => {
+    if (en.isIntersecting) {
+      chips.forEach(c => c.classList.toggle('on', c.hash === '#' + en.target.id));
+    }
+  });
+}, { rootMargin: '-30% 0px -60% 0px' });
+document.querySelectorAll('.exhibit').forEach(x => spy.observe(x));
+
+// 点击索引后平滑居中
+chips.forEach(c => c.addEventListener('click', () => {
+  document.querySelector(c.hash)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}));
+
+// 进度条入场动画
+const bar = new IntersectionObserver(entries => {
+  entries.forEach(en => {
+    if (en.isIntersecting) {
+      const i = en.target.querySelector('i');
+      const w = i.style.width || '64%';
+      i.style.width = '0';
+      requestAnimationFrame(() => requestAnimationFrame(() => {
+        i.style.transition = 'width .9s cubic-bezier(.2,.7,.2,1)';
+        i.style.width = w;
+      }));
+      bar.unobserve(en.target);
+    }
+  });
+}, { threshold: .4 });
+document.querySelectorAll('.d-prog').forEach(p => bar.observe(p));
+
+// 按钮按压微反馈
+document.querySelectorAll('.d-btn').forEach(b => {
+  b.addEventListener('pointerdown', () => b.style.scale = '.97');
+  ['pointerup', 'pointerleave'].forEach(ev =>
+    b.addEventListener(ev, () => b.style.scale = ''));
+});
+</script>
+</body>
+</html>

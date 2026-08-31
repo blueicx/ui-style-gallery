@@ -1,0 +1,29 @@
+{
+  "id": "s75",
+  "name": "Claude 对话",
+  "en": "Claude Chat",
+  "era": "2023 产品 · 温暖的智能",
+  "desc": "赤陶橙 × 米纸暖底：把 AI 对话做出「人间烟火」的克制温度——衬线标题、圆角气泡、无一处冷光。",
+  "demoHTML": "<div class=\"d-nav\"><span class=\"d-logo\">✳ Claude</span><nav class=\"d-links\"><span>Chats</span><span>Projects</span><span>Artifacts</span></nav></div><div><h3 class=\"d-h\">晚上好。今天想聊点什么？</h3><p class=\"d-p\">可以让我写作、分析、编程，或者只是陪你把一个想法想清楚。</p></div><div class=\"d-row\"><button class=\"d-btn\">新建对话</button><button class=\"d-btn ghost\">上传文件</button></div><div class=\"d-row\"><input class=\"d-input\" placeholder=\"Reply to Claude…\"><span class=\"d-badge\">⌘↵</span></div><div class=\"d-badges\"><span class=\"d-badge\">帮我润色一封信</span><span class=\"d-badge\">总结这份 PDF</span></div><div class=\"d-prog\"><i></i></div><div class=\"d-card\">对话即文档：回答可以变成 Artifact 被继续编辑——聊天记录不再是终点。</div>",
+  "spec": {
+    "idea": "AI 不该是冷冰冰的搜索引擎：Anthropic 把对话界面做成书房而非控制台——米色纸感背景、衬线体问候语、赤陶橙只点在关键动作上。「温度」被翻译成了可执行的视觉规范：暖色温、低对比边框、大量呼吸留白。",
+    "font": "问候与正文用衬线体（Tiempos/Copernicus 气质）营造书卷感，UI 标签用无衬线小字号；中英文都遵循「标题衬线、界面无衬线」的双轨制。",
+    "color": "米纸底 #f5f1ea 上只有赤陶橙 #d97757 一个强调色，墨色 #262625 承担全部文字层级；辅助沙色 #e8e0d4 做卡片分区——像在牛皮纸上做设计。",
+    "space": "对话气泡间 16px 呼吸距，输入区固定底部 24px 内边距；整页遵循阅读版心（最大 720px）不随屏幕拉伸——宽度为可读性服务。",
+    "shape": "14px 大圆角贯穿：输入框胶囊化、卡片软糯但不失秩序；头像与徽章全圆形——几何语言统一走「圆润但清醒」。",
+    "shadow": "几乎不用投影：分层靠底色差（米 vs 沙）+1px 暖灰描边；唯一浮层是输入框聚焦时的柔和环境光晕。",
+    "card": "对话卡（预览首句+时间戳）；Artifact 预览卡（代码/文档分栏）；建议提示词芯片——每张卡都是一次对话的入口。",
+    "icon": "细线单色线性图标（星芒 Logo 是唯一品牌符号）；功能图标克制到只剩发送、附件、复制三个常驻。",
+    "comp": "流式回答区（打字机渐显）；Artifacts 侧栏（实时渲染产物）；提示词建议芯片组——三件套定义了「对话即工作台」。"
+  },
+  "use": "AI 对话产品、写作工具、知识问答、需要「可信温度」的内容型界面",
+  "avoid": "数据密集监控台、游戏娱乐、需要强刺激转化的营销页",
+  "refs": ["Claude 官网", "Anthropic 品牌页", "Claude Apps", "Artifacts 功能"],
+  "prompt": "claude ai chat interface ui, warm cream paper background f5f1ea, terracotta orange d97757 single accent, serif display greeting headline, rounded 14px corners soft bubbles, cozy bookish atmosphere, minimal line icons, artifact side panel, generous breathing whitespace, human warmth meets machine intelligence",
+  "pal": ["#d97757", "#f5f1ea", "#262625", "#e8e0d4"],
+  "meta": "AI|工具,light,温暖",
+  "gene": ["notion", "tabbar", "chat", "soft"],
+  "maps": { "shape": "round", "type": "serif", "icon": "thin", "comp": "ghost", "motion": "rise", "shadow": "soft" },
+  "readmeEntry": "Claude 温暖对话",
+  "skin": "#s75 .stage{background:linear-gradient(165deg,#faf7f1,#f5f1ea 60%,#efe8dc);color:#262625}\n#s75 .stage::before{content:'';position:absolute;inset:0;background:radial-gradient(46% 38% at 82% 10%,#d9775712,transparent 60%);pointer-events:none}\n#s75 .d-nav{background:#efe9decf;border:1px solid #e3dbcc;border-radius:12px}\n#s75 .d-logo{font-weight:600;color:#b45a3c}\n#s75 .d-links span{opacity:.66}#s75 .d-links span:hover{opacity:1;background:#d9775714;border-radius:7px}\n#s75 .d-h{letter-spacing:-.01em}\n#s75 .d-p{color:#6f675c}\n#s75 .d-btn{background:#d97757;color:#fff;border-radius:11px;font-weight:500}\n#s75 .d-btn:hover{background:#c96a4c}\n#s75 .d-btn.ghost{background:#00000008;color:#8a5a44;border:1px solid #d9cdb8}\n#s75 .d-input{background:#fffdf9;border:1px solid #e3dbcc;color:#262625;border-radius:999px}\n#s75 .d-tog.onn{background:#d97757}\n#s75 .d-badge{background:#d9775712;color:#a05537;border-radius:999px}\n#s75 .d-prog{height:4px;background:#26262512}#s75 .d-prog i{background:#d97757}\n#s75 .d-card{background:#efe9dd;border:1px solid #e3dbc9;border-radius:13px}"
+}

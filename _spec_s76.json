@@ -1,0 +1,29 @@
+{
+  "id": "s76",
+  "name": "v0 生成器",
+  "en": "v0 by Vercel",
+  "era": "2023 产品 · 生成的黑盒",
+  "desc": "纯黑画布上等待生成的一块「未知区域」：提示词进去，界面出来——生成式 UI 时代的命令行。",
+  "demoHTML": "<div class=\"d-nav\"><span class=\"d-logo\">▲ v0</span><nav class=\"d-links\"><span>Community</span><span>Docs</span><span>Pricing</span></nav></div><div><h3 class=\"d-h\">Describe what you want to build.</h3><p class=\"d-p\">一个输入框就是全部交互：剩下的交给模型与预览的双栏。</p></div><div class=\"d-row\"><button class=\"d-btn\">Generate ⏎</button><button class=\"d-btn ghost\">Attach Image</button></div><div class=\"d-row\"><input class=\"d-input\" placeholder=\"A pricing page with dark hero…\"><span class=\"d-badge\">gpt-4o</span></div><div class=\"d-badges\"><span class=\"d-badge\">Preview</span><span class=\"d-badge\">Code</span></div><div class=\"d-prog\"><i></i></div><div class=\"d-card\">生成中的骨架微光扫过黑色画布——「正在思考」被做成了可感知的材质。</div>",
+  "spec": {
+    "idea": "把「生成」本身做成产品：整个界面只有一个真正的主角——输入框。其余全部退到近乎隐形的深灰层级里，让用户注意力 100% 投入描述；生成过程用骨架屏微光表达「机器在工作」，结果用 Preview/Code 双 Tab 呈现「一次生成两个产物」。",
+    "font": "Geist Sans 全栈：13px 紧凑正文、11px 等宽代码注释；字重对比极端（400 vs 700）——文字层级全靠粗细而非颜色，黑白灰里字体就是唯一的色彩。",
+    "color": "近黑 #0a0a0a 三级灰阶分层（#111/#1a1a1a/#262626），白字只做内容；唯一彩色是状态语义（绿=成功/蓝=信息）；品牌不靠色相靠质感。",
+    "space": "8pt 网格严格对齐；双栏预览各留 12px 呼吸边；垂直节奏为「一屏三段」：对话流 / 输入区 / 预览区——空间即工作流。",
+    "shape": "8px 圆角 + 1px #ffffff14 描边的「暗玻璃」语言；代码块直角保留终端气质；按钮胶囊化但克制。",
+    "shadow": "零投影：深度全靠灰阶差与描边；浮层用 backdrop-blur 的暗色版本——黑暗里的层次感来自「更黑」而非「更亮」。",
+    "card": "生成结果卡（Preview 视口 + Code 切换）；对话消息卡（用户右对齐浅底 / AI 左对齐全宽）；社区作品卡（封面+作者+复刻数）。",
+    "icon": "线性单色 1.5px 图标；Vercel 三角 Logo 是构图中心；模型徽章用等宽字体文本代替图标——极客审美的自我声明。",
+    "comp": "提示词编辑器（多行+附件+历史）；双栏生成视图（实时预览+代码同步滚动）；版本时间线（每代可回滚对比）——三件套定义了生成器范式。"
+  },
+  "use": "AI 生成工具、开发者控制台、代码产品、一切「以输入框为中心」的效率界面",
+  "avoid": "儿童产品、消费娱乐、需要情感温度的品牌官网",
+  "refs": ["v0.dev", "Vercel 官网", "Geist 设计系统", "Next.js Conf"],
+  "prompt": "v0 vercel ai generator ui, pure black 0a0a0a canvas, three-level gray layering, single centered prompt input, skeleton shimmer loading state, preview and code split tabs, geist sans typography, extreme weight contrast, thin 1px subtle borders, monospace model badges, generative ui workbench aesthetic",
+  "pal": ["#ffffff", "#0a0a0a", "#262626", "#0070f3"],
+  "meta": "AI|开发,dark,专注",
+  "gene": ["linear", "topsearch", "deploy", "geist"],
+  "maps": { "shape": "cut", "type": "grotesk", "icon": "thin", "comp": "ghost", "motion": "shimmer", "shadow": "none" },
+  "readmeEntry": "v0 生成黑盒",
+  "skin": "#s76 .stage{background:radial-gradient(110% 130% at 50% -10%,#161616,#0a0a0a 60%);color:#ededed}\n#s76 .stage::before{content:'';position:absolute;inset:0;background:radial-gradient(40% 30% at 50% 0%,#ffffff08,transparent 65%);pointer-events:none}\n#s76 .d-nav{background:#121212cc;border:1px solid #ffffff12;border-radius:10px;backdrop-filter:blur(10px)}\n#s76 .d-logo{font-weight:700}\n#s76 .d-links span{opacity:.58;font-size:11.5px}#s76 .d-links span:hover{opacity:1;background:#ffffff0c;border-radius:6px}\n#s76 .d-p{color:#9c9c9c}\n#s76 .d-btn{background:#fff;color:#000;border-radius:8px;font-weight:600}\n#s76 .d-btn:hover{background:#e5e5e5}\n#s76 .d-btn.ghost{background:#ffffff0a;color:#ccc;border:1px solid #ffffff17}\n#s76 .d-input{background:#141414;border:1px solid #ffffff14;color:#ededed;border-radius:9px;font-family:var(--mono);font-size:12px}\n#s76 .d-tog.onn{background:#fff}\n#s76 .d-badge{background:#ffffff0d;color:#bbb;border-radius:5px;font-family:var(--mono);font-size:10px}\n#s76 .d-prog{height:2px;background:#ffffff10}#s76 .d-prog i{background:#0070f3}\n#s76 .d-card{background:#131313;border:1px solid #ffffff0f;border-radius:10px}"
+}

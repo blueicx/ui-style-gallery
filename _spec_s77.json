@@ -1,0 +1,29 @@
+{
+  "id": "s77",
+  "name": "Perplexity 答题卡",
+  "en": "Perplexity Answer",
+  "era": "2022 产品 · 引用的蓝",
+  "desc": "每个答案都长着脚注：青蓝强调色 + 编号引用 + 来源卡片——把「可信」做成了视觉规范。",
+  "demoHTML": "<div class=\"d-nav\"><span class=\"d-logo\">✦ Perplexity</span><nav class=\"d-links\"><span>Discover</span><span>Spaces</span><span>Library</span></nav></div><div><h3 class=\"d-h\">答案的每句话都有出处。</h3><p class=\"d-p\">行内编号引用悬停即展开来源卡——搜索结果被重构成了可验证的论文。</p></div><div class=\"d-row\"><button class=\"d-btn\">追问 Pro</button><button class=\"d-btn ghost\">重写答案</button></div><div class=\"d-row\"><input class=\"d-input\" placeholder=\"Ask anything…\"><span class=\"d-badge\">Pro</span></div><div class=\"d-badges\"><span class=\"d-badge\">1 Nature</span><span class=\"d-badge\">2 arXiv</span><span class=\"d-badge\">3 Reuters</span></div><div class=\"d-prog\"><i></i></div><div class=\"d-card\">相关追问以芯片流铺在答案尾部——好奇心被设计成可以继续点击的路。</div>",
+  "spec": {
+    "idea": "搜索引擎给链接、AI 给答案，Perplexity 给「带引用的答案」：行内编号 [1][2] 悬停弹出来源卡，把学术引用体系搬进对话流——信任不再是品牌承诺而是可点击的脚注。青蓝 #20808d 只用于强调与引用，其余界面安静如纸。",
+    "font": "FK Grotesk 气质无衬线：15px 答案正文（比常规 UI 大一号，因为答案是主角）、13px 来源卡文字、等宽字体编号上标——字号策略宣告「这里内容优先于界面」。",
+    "color": "暖白底 #fbfaf9 承托墨字 #13343b；唯一强调是深青蓝 #20808d：引用编号、按钮、进度、焦点环全部同源；来源站点 favicon 是页面上唯一的「外来色彩」。",
+    "space": "答案区最大 640px 阅读版心，行高 1.7 的论文式排版；引用编号上标占位不挤行；来源卡网格 12px 间距——空间节奏像排一页期刊。",
+    "shape": "10px 圆角卡片 + 胶囊输入框；引用编号小圆片；来源卡带顶边细线强调——几何克制，学术气质。",
+    "shadow": "极轻投影（0 1px 3px 8%）：来源卡悬浮感而非弹窗感；答案本体完全平面——深度只给「可点开的证据」。",
+    "card": "答案卡（标题+正文+行内引用）；来源卡（favicon+标题+域名+匹配摘要高亮）；追问建议芯片流——三卡构成一次完整求证闭环。",
+    "icon": "细线单色线性；星芒 Logo 与青蓝同色；来源 favicon 彩色但被统一压进灰底圆片——秩序收编了杂色。",
+    "comp": "行内引用系统（编号+悬停来源卡）；Focus 模式（限定学术/社交/视频域）；追问芯片流——三件套定义「答案引擎」。"
+  },
+  "use": "AI 搜索、知识引擎、研究工具、一切需要「可验证感」的内容产品",
+  "avoid": "游戏化产品、冲动消费场景、纯娱乐信息流",
+  "refs": ["Perplexity 官网", "Perplexity 博客", "Pro Search 功能", "Pages 产品"],
+  "prompt": "perplexity ai answer engine ui, warm white fbfaf9 background, deep teal blue 20808d accent, inline citation numbers with hover source cards, academic paper layout rhythm, fk grotesk typography, favicon chips in gray circles, related follow-up question pills, trustworthy knowledge aesthetic, footnote design system",
+  "pal": ["#20808d", "#fbfaf9", "#13343b", "#e8ecea"],
+  "meta": "AI|搜索,light,可信",
+  "gene": ["paper", "topsearch", "browser", "thin"],
+  "maps": { "shape": "small", "type": "grotesk", "icon": "thin", "comp": "pillb", "motion": "typewriter", "shadow": "soft" },
+  "readmeEntry": "Perplexity 可信答题",
+  "skin": "#s77 .stage{background:linear-gradient(170deg,#fcfbf9,#f7f6f2);color:#13343b}\n#s77 .stage::before{content:'';position:absolute;inset:0;background:radial-gradient(44% 36% at 14% 8%,#20808d0e,transparent 60%);pointer-events:none}\n#s77 .d-nav{background:#ffffffb8;border:1px solid #e4e7e5;border-radius:11px}\n#s77 .d-logo{font-weight:600;color:#1a6b78}\n#s77 .d-links span{opacity:.64}#s77 .d-links span:hover{opacity:1;background:#20808d10;border-radius:7px}\n#s77 .d-h{letter-spacing:-.01em}\n#s77 .d-p{color:#5c7079}\n#s77 .d-btn{background:#20808d;color:#fff;border-radius:10px;font-weight:500}\n#s77 .d-btn:hover{background:#1a6b78}\n#s77 .d-btn.ghost{background:#00000006;color:#1a6b78;border:1px solid #cfdad7}\n#s77 .d-input{background:#fff;border:1px solid #dbe2df;color:#13343b;border-radius:999px}\n#s77 .d-tog.onn{background:#20808d}\n#s77 .d-badge{background:#20808d0e;color:#17646f;border-radius:6px;font-size:10.5px}\n#s77 .d-prog{height:3px;background:#13343b10}#s77 .d-prog i{background:#20808d}\n#s77 .d-card{background:#fff;border:1px solid #e4e7e5;border-top:2px solid #20808d;border-radius:9px}"
+}
