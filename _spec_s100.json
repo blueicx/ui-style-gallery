@@ -1,0 +1,29 @@
+{
+  "id": "s100",
+  "name": "Webcore · 网络核心",
+  "en": "Webcore / Glitch",
+  "era": "1997 废墟 · 2023 复兴",
+  "desc": "GeoCities 的亡魂在霓虹里复活：故障文字、跑马灯、贴纸拼贴——Webcore 是互联网青春期的涂鸦墙，反设计就是它的设计。",
+  "demoHTML": "<div class='d-nav'><span class='d-logo'>★ w3b c0re ★</span><nav class='d-links'><span>~home</span><span>~mixtape.mp3</span><span>~guestbook</span></nav></div><div><h3 class='d-h'>W3LC0ME 2 MY SITE</h3><p class='d-p'> visitor count: 000137 · 本站由 Netscape 与偏执建造 · 请勿用 Chrome 打开，那是对童年的背叛。</p></div><div class='d-row'><button class='d-btn'>SIGN GUESTBOOK</button><button class='d-btn ghost'>DOWNLOAD MIDI</button></div><div class='d-row'><input class='d-input' placeholder='search the old web_'></div><div class='d-badges'><span class='d-badge'>★ 56k 友好 ★</span><span class='d-badge'>UNDER CONSTRUCTION FOREVER</span></div><div class='d-prog'><i></i></div><div class='d-card'>故障（glitch）排印：RGB 三通道错位 + 随机丢帧位移——网站假装自己随时会崩，是它最诚实的时刻。</div>",
+  "spec": {
+    "idea": "Webcore 是 Gen-Z 对 Web 1.0 废墟的再发明：当年 GeoCities 社区（Squirtle Valley、Neopets 同人站）那种 HTML 默认样式 + GIF 贴纸 + 闪烁文字，被 2020s 的「frutiger aero / webcore」美学重新点燃。它故意保留浏览器的粗粝默认态，再加故障艺术（glitch art）的 RGB 分离、扫描线与坏点——表达「网络不是干净的，网络是活的」。",
+    "font": "系统默认字体大乱炖（Comic Sans / Times / Courier）+ 故障主标题：同字三层 RGB 错位，偶尔整行像素错位。",
+    "color": "纯黑底 + 全光谱对撞：品红 #FF00F5、青 #00FFF3、荧光绿 #39FF14、钴蓝 #0000FF——色彩关系是「互不相让」。",
+    "space": "反栅格：元素随机旋转 ±0.5°、外边距忽大忽小、贴纸溢出容器——秩序是被怀疑的对象。",
+    "shape": "默认浏览器方框 + 虚线/点线边框混用；GIF 贴纸无形状可循。",
+    "shadow": "无阴影或 RGB 分离硬影（2px 0 品红 / -2px 0 青）——文字自带色差，像没调准的电视机。",
+    "card": "访客留言框、跑马灯横幅、计数器牌——三件套是古网页的图章，新网页把它裱起来。",
+    "icon": "ASCII 符号 + 1px 边框小图标 + 闪烁 GIF——图标库 = 童年收藏夹。",
+    "comp": "marquee 滚动 + blink 闪烁 + glitch 错位，是亚音乐/数字艺术的通用情绪词汇。"
+  },
+  "use": "独立音乐/数字艺术、亚文化社区、创意人主页、潮流联名",
+  "avoid": "任何需要信任感的商业交易界面、政企、医疗",
+  "refs": ["GeoCities 博物馆", "Glitch Art (Phillips, 2013)", "frutiger aero", "Neocities"],
+  "prompt": "webcore net art ui, geocities ruins revived with rgb split glitch headlines, scanline flicker overlay, sticker collage rotation chaos, hot magenta cyan acid green clash on pure black, marquee banners and guestbook boxes and hit counters, dashed default-browser borders, anti-design sincerity of the 1997 web",
+  "pal": ["#FF00F5", "#050505", "#00FFF3", "#39FF14"],
+  "meta": "网络亚文化,dark,反叛",
+  "gene": ["netart", "sticker", "marquee", "glitch"],
+  "maps": { "shape": "asym", "type": "display", "icon": "glyph", "comp": "brutalb", "motion": "glitch", "shadow": "hard" },
+  "readmeEntry": "Webcore 网络核心",
+  "skin": "#s100 .stage{background:#050505;color:#39FF14;font-family:var(--mono)}\n#s100 .stage::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(0deg,#ff00f50a 0 2px,transparent 2px 4px);pointer-events:none}\n#s100 .d-nav{background:#111;border:2px dashed #FF00F5;border-radius:0;transform:rotate(-.6deg)}\n#s100 .d-logo{font-weight:700;color:#00FFF3;text-shadow:2px 2px #FF00F5,-2px -2px #39FF14}\n#s100 .d-links span{color:#ff86f2;opacity:.8}#s100 .d-links span:hover{opacity:1;text-decoration:underline wavy #39FF14}\n#s100 .d-h{color:#FF00F5;text-shadow:2px 0 #00FFF3}\n#s100 .d-p{color:#b8e9c3}\n#s100 .d-btn{background:#39FF14;color:#000;border:2px solid #fff;border-radius:0;box-shadow:4px 4px 0 #FF00F5;font-weight:700;letter-spacing:.04em}\n#s100 .d-btn:hover{transform:translate(2px,2px);box-shadow:2px 2px 0 #00FFF3}\n#s100 .d-btn.ghost{background:#00FFF3;color:#000;box-shadow:4px 4px 0 #39FF14}\n#s100 .d-input{background:#000;border:2px dotted #00FFF3;color:#39FF14}\n#s100 .d-badge{background:#FF00F5;color:#fff;border-radius:0;font-weight:700}\n#s100 .d-prog{background:#111;border:1px solid #fff;border-radius:0}#s100 .d-prog i{background:repeating-linear-gradient(90deg,#FF00F5 0 8px,#00FFF3 8px 16px,#39FF14 16px 24px)}\n#s100 .d-card{background:#0a0a0a;border:2px dashed #39FF14;border-radius:0;transform:rotate(.4deg)}"
+}

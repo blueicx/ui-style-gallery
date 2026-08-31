@@ -1,0 +1,12 @@
+{
+  "name": "ui-style-atlas",
+  "version": "2.0.0",
+  "description": "UI 风格图鉴 · 87+ 种设计风格的活体博物馆（单文件 · 零依赖 · 离线可用）",
+  "private": true,
+  "scripts": {
+    "test": "node verify.js",
+    "verify": "node verify.js",
+    "add": "node add_style.js"
+  },
+  "license": "MIT"
+}

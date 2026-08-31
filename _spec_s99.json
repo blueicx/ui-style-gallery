@@ -1,0 +1,29 @@
+{
+  "id": "s99",
+  "name": "Cassette Futurism · 磁带未来主义",
+  "en": "Cassette Futurism",
+  "era": "1979-1995 · 硬件科幻",
+  "desc": "《异形》飞船的驾驶舱至今没过期：琥珀色 CRT + 物理旋钮 + LED 数码管——未来在 80 年代的想象里一直是复古的。",
+  "demoHTML": "<div class='d-nav'><span class='d-logo'>NOSTROMO·OS</span><nav class='d-links'><span>NAV</span><span>MOTION</span><span>SYSTEM</span></nav></div><div><h3 class='d-h'>SELF-DESTRUCT SEQUENCE</h3><p class='d-p'>TERM 004 待机中——琥珀色是安全的颜色，直到它开始闪烁红光。</p></div><div class='d-row'><button class='d-btn'>ENGAGE</button><button class='d-btn ghost'>ABORT</button></div><div class='d-row'><input class='d-input' placeholder='&gt; _'></div><div class='d-badges'><span class='d-badge'>SIGNAL LOCK</span><span class='d-badge'>O2 98.2%</span></div><div class='d-prog'><i></i></div><div class='d-card'>面板铭牌：每个控件都刻着不可折叠的标签（STROBE / DECK A），硬件界面无 hover 态，只有 LED 亮灭。</div>",
+  "spec": {
+    "idea": "Cassette Futurism（磁带未来主义）是科幻对「模拟时代未来」的乡愁：《异形》《太空渠道》里的界面没有触控屏，只有旋转的旋钮、拨杆、翻页纸带和单色 CRT。UI 圈把它从游戏美术提炼成风格：金属面板 + 琥珀/冰蓝荧光 + 等宽终端字——暗示一台正在认真运转的老机器。",
+    "font": "等宽终端字体（IBM Plex Mono / VT323 / 数码管段码）：全大写 + 大字距 + LED 字模做数值显示，标签像激光蚀刻。",
+    "color": "深空面板 #0A1520 与 #0D1A26；主荧光琥珀 #FFB454，辅荧光冰蓝 #7DF9FF；告警红 #FF5C5C 只配闪烁；绿色是「正常」。",
+    "space": "栅格模仿机箱前面板：控件成排成列，组间距用蚀刻分隔线；数值区永远右对齐。",
+    "shape": "直角 + 2px 切角面板；旋钮是正圆，其余一切拒绝圆润——机器不需要被讨好。",
+    "shadow": "不用投影，用内蚀刻（inset 高光 + 内暗角）表达「凹进面板」；CRT 发光靠 text-shadow 光晕。",
+    "card": "设备面板卡（带螺丝孔/铭牌）、CRT 终端卡（扫描线）、LED 计数卡——三种卡=一座驾驶舱。",
+    "icon": "单色蚀刻图标：箭头、十字、警示三角——像机翼上的丝网印刷符号。",
+    "comp": "扫描线 + LED 数码管 + 拨杆开关，是硬核科幻/极客产品的情绪放大器。"
+  },
+  "use": "科幻游戏、音乐硬件、极客仪表盘、太空/工业品牌",
+  "avoid": "消费级 App、温柔品牌、政务/医疗等严肃克制场景",
+  "refs": ["《异形》Nostromo 控制台", "Cassette Futurism 词条", "IBM Plex Mono", "VT220 终端"],
+  "prompt": "cassette futurism ui, dark metal console panels with etched engraved labels, amber crt phosphor glow text, ice blue led digits monospace, scanline overlay, physical knob and toggle switches rows, inset bevel etching not shadows, 1979 sci-fi bridge terminal mood, uppercase laser-etched signage",
+  "pal": ["#FFB454", "#0A1520", "#7DF9FF", "#16283A"],
+  "meta": "复古科幻,dark,怀旧",
+  "gene": ["retro", "crt", "terminal", "etched"],
+  "maps": { "shape": "cut", "type": "mono", "icon": "glyph", "comp": "knob", "motion": "typewriter", "shadow": "glow" },
+  "readmeEntry": "Cassette Futurism 磁带未来主义",
+  "skin": "#s99 .stage{background:linear-gradient(180deg,#0a1520,#101c28);color:#FFB454;font-family:var(--mono)}\n#s99 .d-nav{background:#0d1a26;border:1px solid #2a4a63;border-radius:2px;box-shadow:inset 0 1px 0 #ffffff1a,0 0 24px #ffb45414}\n#s99 .d-logo{letter-spacing:.2em;color:#7DF9FF;text-shadow:0 0 12px #7df9ff80}\n#s99 .d-links span{opacity:.6;color:#5f7f99;letter-spacing:.1em}#s99 .d-links span:hover{opacity:1;color:#FFB454}\n#s99 .d-h{letter-spacing:.12em;font-weight:500;text-shadow:0 0 14px #ffb45466}\n#s99 .d-p{color:#8fa9bd}\n#s99 .d-btn{background:#FFB454;color:#0a1520;border:1px solid #ffd18f;border-radius:2px;box-shadow:0 0 18px #ffb4544d,inset 0 -2px 0 #b8791f;font-weight:700;letter-spacing:.1em}\n#s99 .d-btn:hover{filter:brightness(1.1)}\n#s99 .d-btn.ghost{background:#16283a;color:#7DF9FF;border:1px solid #2a4a63;box-shadow:0 0 12px #7df9ff26}\n#s99 .d-input{background:#050b12;border:1px solid #2a4a63;color:#7DF9FF;box-shadow:inset 0 0 12px #00000080;caret-color:#7DF9FF}\n#s99 .d-badge{background:#16283a;color:#FFB454;border:1px solid #2a4a63;border-radius:2px;letter-spacing:.1em}\n#s99 .d-prog{background:#050b12;border:1px solid #2a4a63;border-radius:0}#s99 .d-prog i{background:repeating-linear-gradient(90deg,#FFB454 0 6px,#050b12 6px 8px)}\n#s99 .d-card{background:#0d1a26;border:1px solid #2a4a63;border-radius:2px;box-shadow:inset 0 0 30px #ffb4540d}"
+}

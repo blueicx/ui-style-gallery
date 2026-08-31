@@ -1,0 +1,29 @@
+{
+  "id": "s90",
+  "name": "Shopify · Polaris",
+  "en": "Shopify Polaris",
+  "era": "2017 至今 · 商家工作台",
+  "desc": "为「认真赚钱的人」做的后台：中性灰打底、一抹 Shopify 绿点睛、卡片像收银小票——工具感压倒装饰欲。",
+  "demoHTML": "<div class='d-nav'><span class='d-logo'>Polaris</span><nav class='d-links'><span>概览</span><span>订单</span><span>商品</span></nav></div><div><h3 class='d-h'>今日营收</h3><p class='d-p'>大数字 + 环比小绿箭头，商家 0.5 秒判断生意好坏——后台的第一 KPI 是「一眼看懂」。</p></div><div class='d-row'><button class='d-btn'>创建商品</button><button class='d-btn ghost'>导出报表</button></div><div class='d-row'><input class='d-input' placeholder='搜索订单、客户、商品'></div><div class='d-badges'><span class='d-badge'>已发货</span><span class='d-badge'>待付款</span><span class='d-badge'>已退款</span></div><div class='d-prog'><i></i></div><div class='d-card'>订单行：#1042 · 3 件 · ¥486.00 · 状态胶囊靠右对齐——表格即信任。</div>",
+  "spec": {
+    "idea": "Polaris 服务的是全球数百万商家，它们的界面语言是「可靠的收银台」：几乎所有色彩都是中性灰阶，绿色只在主操作与成功态出现。信息架构优先于视觉表现——因为商家在这里是真金白银地工作，任何花哨都是干扰。",
+    "font": "系统 UI 字体栈 + 等宽数字：正文 13px 紧凑，数据用 tabular figures 对齐，标题只比正文大一级——克制到几乎没有排版表演。",
+    "color": "背景 #f6f6f7 灰白，卡片纯白 #ffffff，正文 #202223 石墨；Shopify 绿 #008060 专供主按钮与成功；边框 #e1e3e5 承担大部分分隔。",
+    "space": "8px 基准栅格，卡片 16px 内边距、区块间距 20px；表单一列到底而非双列——为「读表」而非「逛」设计的留白。",
+    "shape": "统一 8px 小圆角，克制到接近直角；卡片、按钮、输入框共享同一半径形成家族感。",
+    "shadow": "极浅阴影 + 1px 边框双保险（0 1px 0 #0000000a）：层级靠边框与留白，不靠投影表演。",
+    "card": "卡片（Card）是 Polaris 的原子：白色 + 8px 圆角 + 细边；内嵌 ResourceList 行式布局承载订单/商品等实体。",
+    "icon": "2px 线性图标单色跟随文字色；状态点用纯色圆点，图标绝不抢数据的注意力。",
+    "comp": "Frame 侧边导航 + Page 标题区 + Card + ResourceList + Badge 状态胶囊，五件套覆盖所有商家后台。"
+  },
+  "use": "电商后台、SaaS 工作台、数据密集管理工具",
+  "avoid": "营销落地页、娱乐向、强品牌表现力场景",
+  "refs": ["polaris.shopify.com", "Shopify Design 博客", "Polaris Figma 库", "App Bridge"],
+  "prompt": "shopify polaris admin ui, neutral graphite grayscale with shopify green 008060 accents only, white cards with 8px radius and hairline borders, resource list rows, receipt-clean commerce backoffice, system sans with tabular numerals, restrained information-first tooling aesthetic, badge status pills",
+  "pal": ["#008060", "#f6f6f7", "#202223", "#ffffff"],
+  "meta": "电商SaaS,light,可靠",
+  "gene": ["flat", "sidebarish", "table", "line"],
+  "maps": { "shape": "small", "type": "grotesk", "icon": "thin", "comp": "flat", "motion": "easeout", "shadow": "none" },
+  "readmeEntry": "Shopify Polaris 收银台",
+  "skin": "#s90 .stage{background:#f6f6f7;color:#202223}\n#s90 .d-nav{background:#fff;border:1px solid #e1e3e5;border-radius:8px}\n#s90 .d-logo{font-weight:600;color:#202223}\n#s90 .d-links span{opacity:.6;color:#5c5f66}#s90 .d-links span:hover{opacity:1;color:#008060}\n#s90 .d-h{font-weight:600;letter-spacing:-.01em}\n#s90 .d-p{color:#5c5f66}\n#s90 .d-btn{background:#008060;color:#fff;border-radius:8px;font-weight:500}\n#s90 .d-btn:hover{background:#006e52}\n#s90 .d-btn.ghost{background:#fff;color:#202223;border:1px solid #e1e3e5}\n#s90 .d-input{background:#fff;border:1px solid #e1e3e5;border-radius:8px;color:#202223}\n#s90 .d-badge{background:#00806014;color:#006e52;border-radius:6px;font-weight:500}\n#s90 .d-prog{background:#e1e3e5}#s90 .d-prog i{background:#008060}\n#s90 .d-card{background:#fff;border:1px solid #e1e3e5;border-radius:8px;box-shadow:0 1px 0 #0000000a}"
+}

@@ -92,14 +92,14 @@ try {
 } catch (e) { console.log('EXEC ERROR:', e.message); process.exit(1); }
 
 const tabs = (html.match(/data-view="/g)||[]).length;
-expect('87 展品', r.exhibits===87, r.exhibits);
+expect('100 展品', r.exhibits===100, r.exhibits);
 expect('70 词条', r.lexTerms===70, r.lexTerms);
 expect('139 词库→展台互链', r.seelinks===139, r.seelinks);
 expect('70 术语药丸', r.tchips===70, r.tchips);
-expect('87 进度线刻度', r.vrailDots===87, r.vrailDots);
-expect('Figma tokens 87 组', r.figmaOK===87, r.figmaOK);
+expect('100 进度线刻度', r.vrailDots===100, r.vrailDots);
+expect('Figma tokens 100 组', r.figmaOK===100, r.figmaOK);
 expect('7 座分馆(顺序 color,shape,type,icon,comp,motion,shadow)', r.halls===7 && r.hallKeys.join(',')==='color,shape,type,icon,comp,motion,shadow', r.hallKeys.join(','));
-expect('17 个视图标签', tabs===17, tabs);
+expect('18 个视图标签', tabs===18, tabs);
 expect('动效馆可路由(view-motion 容器 + 标签，无手工白名单拦截)', html.includes('id="view-${h.key}"') && html.includes('data-view="motion"') && !html.includes("VIEWS.includes(name)"), 'route');
 expect('色卡墙渲染数 = 去重色数(>50)', r.chips===r.uniqueColors && r.uniqueColors>50, r.chips+'/'+r.uniqueColors);
 expect('76 个标本', r.specimens===76, r.specimens);
@@ -110,14 +110,17 @@ expect('混搭提示词含分馆链接', r.mixHasLinks===true, r.mixHasLinks);
 expect('打印展开全部视图', /\.view\{display:block !important\}/.test(html), 'css');
 expect('动效关键帧存在', html.includes('@keyframes moSlide') && html.includes('@keyframes moFlip'), 'css');
 expect('焦点陷阱已接入', html.includes("let lastFocusEl") && html.includes("e.key!=='Tab'"), 'js');
-expect('87 展台 MD 按钮', r.mdBtns===87, r.mdBtns);
+expect('100 展台 MD 按钮', r.mdBtns===100, r.mdBtns);
 expect('MD 导出函数完整(九维标签齐全)', ['设计理念','字体逻辑','配色系统','间距规则','形状语言','阴影语言','卡片层级','图标风格','组件规范'].every(l=>html.includes(":'"+l+"'")), 'labels');
-expect('87 展台打印按钮', r.pfBtns===87, r.pfBtns);
+expect('100 展台打印按钮', r.pfBtns===100, r.pfBtns);
 expect('单卡打印规则(print-one/print-target)', html.includes('body.print-one .exhibit.print-target') && html.includes('afterprint'), 'css');
 expect('收藏夹面板(open-fav + fav-overlay + 清空)', html.includes('id="open-fav"') && html.includes('id="fav-overlay"') && html.includes("id='fav-clear'")===false && html.includes('fav-clear'), 'fav');
 expect('最近浏览条(recentbar + sessionStorage)', html.includes('id="recentbar"') && html.includes('atlas-recents'), 'recents');
 expect('混搭 A/B 锁定(lock-a/lock-b)', html.includes('id="lock-a"') && html.includes('id="lock-b"') && html.includes('lockBEl.checked'), 'locks');
 expect('瑞士实战页已挂接(swiss-portfolio.html)', html.includes('swiss-portfolio.html') && fs.existsSync(__dirname+'/swiss-portfolio.html'), 'case');
+expect('便当仪表盘实战已挂接(bento-dashboard.html)', html.includes('bento-dashboard.html') && fs.existsSync(__dirname+'/bento-dashboard.html'), 'case2');
+expect('标签徽标运行时驱动(无硬编码计数)', html.includes('id="badge-gallery"') && html.includes('id="badge-lexicon"') && html.includes('id="badge-cams"') && !/展馆 <b>\d+<\/b>/.test(html), 'badges');
+expect('交接文档在库(HANDOFF.md)', fs.existsSync(__dirname+'/HANDOFF.md') && fs.readFileSync(__dirname+'/README.md','utf8').includes('HANDOFF.md'), 'handoff');
 expect('距离感知跳转(jumpTo+统一锚点拦截)', html.includes('function jumpTo(') && html.includes('统一锚点拦截'), 'js');
 expect('无残留无条件平滑 scrollIntoView', html.split("scrollIntoView({behavior:'smooth'").length-1===0, html.split("scrollIntoView({behavior:'smooth'").length-1);
 expect('全局 CSS 平滑已禁用', /html\{scroll-behavior:auto\}/.test(html), 'css');
@@ -126,7 +129,7 @@ expect('VSGo 板块已完全移除', !html.includes('vsgo') && !html.includes('V
 expect('⌘K 命令面板(cmdk 引擎 + / ? 键)', html.includes('cmdk-overlay') && html.includes('cmdkFilter') && html.includes("e.key==='?'"), 'cmdk');
 expect('WCAG 对比度检查器(色馆内嵌+色盲滤镜)', html.includes('id="wcc"') && html.includes('cvd-prot') && html.includes('AAA 正文'), 'wcc');
 expect('年代时间轴(timeline 视图)', html.includes('view-timeline') && html.includes('timelineInit'), 'tl');
-expect('手机专属区(87台真机壳·结构基因各不相同+双模式)', html.includes('view-mobile') && html.includes('mb-sea') && html.includes('ph-notch') && html.includes('mobileInit') && !html.includes('mb-wall') && (html.match(/s\d{1,3}:\['[a-z]+','[a-z]+'/g) || []).length === 87, 'mb');
+expect('手机专属区(100台真机壳·结构基因各不相同+双模式)', html.includes('view-mobile') && html.includes('mb-sea') && html.includes('ph-notch') && html.includes('mobileInit') && !html.includes('mb-wall') && (html.match(/s\d{1,3}:\['[a-z]+','[a-z]+'/g) || []).length === 100, 'mb');
 expect('混搭收藏夹(保存/载入/分享/删除)', html.includes('mix-save') && html.includes('data-mixshare') && html.includes("'mix'").toString()==='true' ? (html.includes('atlas-mixfavs')&&html.includes('?mix=')) : false, 'mixfav');
 expect('GENE 表键数=展品数', r.geneKeys===r.exhibits, r.geneKeys+'/'+r.exhibits);
 expect('PAL 表键数=展品数', r.palKeys===r.exhibits, r.palKeys+'/'+r.exhibits);

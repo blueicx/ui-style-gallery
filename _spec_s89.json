@@ -1,0 +1,29 @@
+﻿{
+  "id": "s89",
+  "name": "支付宝 · 普惠蓝紫",
+  "en": "Alipay Universal Blue",
+  "era": "2020 品牌升级 · 数字生活开放",
+  "desc": "把「钱」做得不吓人：科技蓝紫渐变装在资产卡上，九宫格服务像超市货架——金融 UX 的尽头是生活化。",
+  "demoHTML": "<div class='d-nav'><span class='d-logo'>支付宝</span><nav class='d-links'><span>扫一扫</span><span>收付款</span><span>理财</span></nav></div><div class='d-card'><h3 class='d-h'>¥ 24,580.00</h3><p class='d-p'>总资产 · 昨日收益 +12.36 · 等宽数字放大是「资产可视化」的诚实</p></div><div class='d-row'><button class='d-btn'>转账</button><button class='d-btn ghost'>还信用卡</button></div><div class='d-badges'><span class='d-badge'>余额宝</span><span class='d-badge'>基金</span><span class='d-badge'>黄金</span><span class='d-badge'>保险</span></div><div class='d-prog'><i></i></div><div class='d-input-wrap' style='width:100%'><input class='d-input' placeholder='搜索服务、小程序'></div>",
+  "spec": {
+    "idea": "支付宝的品牌难题是「信任 + 亲近」：严肃藏蓝让人尊重却不想打开，于是把蓝向紫推移成科技蓝，渐变只留给资产卡——钱是主角，界面退后。超级 App 的首页做成服务货架，把金融拆成一格格的日常。",
+    "font": "PingFang 气质无衬线 + 资产等宽数字：余额 32px 特大号、收益 13px 绿/红，字号差就是心理账户的层级。",
+    "color": "信任蓝 #1677ff 管按钮/链接/进度；蓝紫渐变 #1677ff→#7a5cff 专属资产卡；语义色涨绿跌红守中国金融惯例。",
+    "space": "首页服务宫格 4 列 20px 间距，资产卡 16px 大内边距——「钱包」比「仪表盘」更值钱的空间隐喻。",
+    "shape": "16px 大圆角卡片 + 胶囊搜索；蓝紫渐变卡的四角圆得像银行卡——材质记忆被移植了。",
+    "shadow": "资产卡带蓝紫辉光投影，其余平面；光只为「钱」服务，层级系统即注意力系统。",
+    "card": "资产总卡（渐变+大数字）、服务宫格、收益明细条——三件套撑起国民钱包心智。",
+    "icon": "面性渐变图标每服务一色（理财金/保险绿/出行青），在白色宫格里像货架上的彩盒。",
+    "comp": "渐变资产卡 + 宫格服务墙 + 胶囊搜索，是超级 App 金融分身的标准构图。"
+  },
+  "use": "钱包/银行数字产品、资产看板、民生缴费、普惠金融",
+  "avoid": "游戏、潮流社区、暗色沉浸式工具",
+  "refs": ["支付宝 7.0 品牌升级", "数字生活开放平台", "Ant Design 体系", "蓝紫渐变视觉规范"],
+  "prompt": "alipay super app wallet ui, universal blue 1677ff with violet gradient asset card, oversized monospace balance numbers, colorful flat service grid like supermarket shelves, pill search, glowing credit-card shadows only on money, trustworthy fintech softened into daily life",
+  "pal": ["#1677ff", "#ffffff", "#14263e", "#eef4ff"],
+  "meta": "金融科技,light,可信赖",
+  "gene": ["flat", "topbar", "finance", "fill"],
+  "maps": { "shape": "squircle", "type": "grotesk", "icon": "fill", "comp": "gradb", "motion": "floaty", "shadow": "glow" },
+  "readmeEntry": "支付宝蓝紫普惠",
+  "skin": "#s89 .stage{background:linear-gradient(180deg,#f4f8ff,#fff);color:#14263e}\n#s89 .d-nav{background:#ffffffcc;border:1px solid #e3ecff;border-radius:14px}\n#s89 .d-logo{font-weight:700;color:#1677ff}\n#s89 .d-links span{opacity:.62}#s89 .d-links span:hover{opacity:1;color:#1677ff}\n#s89 .d-h{font-family:var(--mono);letter-spacing:-.01em;color:#14263e}\n#s89 .d-p{color:#5d7290}\n#s89 .d-btn{background:#1677ff;color:#fff;border-radius:12px;font-weight:600}\n#s89 .d-btn:hover{background:#0e5fd8;box-shadow:0 6px 16px #1677ff3d}\n#s89 .d-btn.ghost{background:#eef4ff;color:#1677ff;border:1px solid #cfe0ff}\n#s89 .d-input{background:#fff;border:1px solid #d7e5ff;border-radius:999px}\n#s89 .d-badge{background:#fff;color:#1677ff;border:1px solid #d7e5ff;border-radius:8px}\n#s89 .d-prog{background:#e6efff}#s89 .d-prog i{background:linear-gradient(90deg,#1677ff,#7a5cff)}\n#s89 .d-card{background:linear-gradient(135deg,#1b7bff,#7a5cff);border:0;border-radius:18px;color:#fff;box-shadow:0 12px 30px #4a6cff3d}\n#s89 .d-card .d-h{color:#fff}#s89 .d-card .d-p{color:#e6ecff}"
+}

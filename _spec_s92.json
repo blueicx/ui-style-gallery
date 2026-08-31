@@ -1,0 +1,29 @@
+{
+  "id": "s92",
+  "name": "Salesforce · Lightning",
+  "en": "Salesforce Lightning",
+  "era": "2015 CRM 之光 · 销售蓝云",
+  "desc": "全球最赚钱的 CRM 长这样：白云蓝天下每张卡片都是一个销售阶段——把「pipeline」做成了可以拖的东西。",
+  "demoHTML": "<div class='d-nav'><span class='d-logo'>☁ Lightning</span><nav class='d-links'><span>Leads</span><span>Opportunities</span><span>Reports</span></nav></div><div><h3 class='d-h'>Q4 Pipeline · ¥12.4M</h3><p class='d-p'>机会金额永远比界面大一号——销售人员每天看它 40 次，数字即士气。</p></div><div class='d-row'><button class='d-btn'>New Opportunity</button><button class='d-btn ghost'>Import</button></div><div class='d-row'><input class='d-input' placeholder='Global Search…'></div><div class='d-badges'><span class='d-badge'>Prospecting</span><span class='d-badge'>Negotiation</span><span class='d-badge'>Closed Won</span></div><div class='d-prog'><i></i></div><div class='d-card'>Path 组件：阶段进度条用蓝→绿渐变铺满，走到 Closed Won 时会撒花。</div>",
+  "spec": {
+    "idea": "Lightning 的设计目标是「让销售相信漏斗」：Path 组件把商机阶段画成一条渐变色传送带，越接近成交越绿。蓝白配色继承 Salesforce 云的隐喻，高密度表格 + 悬停行操作 + 全局搜索框常驻——一切为每天 8 小时重复劳动的效率设计。",
+    "font": "Slate 定制无衬线家族：正文 13px、数据 16px、KPI 24px 三级火箭；数字一律 tabular 对齐，金额精确到分。",
+    "color": "云白 #ffffff + 天际蓝 #0176D3 主导；正文 #181818 纯黑不妥协；语义色 Closed Won 绿 #2E844A、风险红 #EA001E；阶段渐变从 #1B96FF 流到 #2E844A。",
+    "space": "SLDS 密度规范：header 48px、行高 32px、图标网格 24/32/48 三档；留白吝啬但行距整齐——「仓库般的秩序」。",
+    "shape": "0.25rem(4px) 微圆角 + 直角表格并存；Path 胶囊两端切角——工具感优先，柔软只是点缀。",
+    "shadow": "模态用大投影，列表卡片仅 1px 边框；阴影只表示「离开了页面」这一件事。",
+    "card": "Record 详情页（字段两列网格）、Path 阶段条、Dash 数据卡——CRM 世界的三块基石。",
+    "icon": "utility 图标 96 枚线性家族，face 图标补位；图标永远 1:1 跟随文字色。",
+    "comp": "Global Header + App Launcher 九宫格 + Path 组件 + Record Home，企业软件的「Office 化」样板。"
+  },
+  "use": "CRM、销售工具、企业级表单密集系统",
+  "avoid": "轻量消费产品、创意作品集、暗色沉浸工具",
+  "refs": ["Lightning Design System (SLDS)", "salesforce.design", "Path 组件", "App Launcher"],
+  "prompt": "salesforce lightning crm ui, sky blue 0176d3 on white clouds, path component with blue-to-green stage gradient, dense record detail grids with 32px rows, slate typeface tabular numerals, big deal numbers as hero, enterprise sales pipeline optimism, global search always present",
+  "pal": ["#0176D3", "#F3F3F3", "#181818", "#FFFFFF"],
+  "meta": "企业软件,light,高效",
+  "gene": ["flat", "topbar", "table", "line"],
+  "maps": { "shape": "small", "type": "grotesk", "icon": "std", "comp": "flat", "motion": "easeout", "shadow": "none" },
+  "readmeEntry": "Salesforce  Lightning 销售云",
+  "skin": "#s92 .stage{background:linear-gradient(180deg,#eaf5fe,#fff);color:#181818}\n#s92 .d-nav{background:#fff;border:1px solid #e5e5e5;border-radius:4px}\n#s92 .d-logo{font-weight:700;color:#0176D3}\n#s92 .d-links span{opacity:.65;color:#444}#s92 .d-links span:hover{opacity:1;color:#0176D3}\n#s92 .d-h{font-weight:700;letter-spacing:-.01em}\n#s92 .d-p{color:#444}\n#s92 .d-btn{background:#0176D3;color:#fff;border-radius:4px;font-weight:700}\n#s92 .d-btn:hover{background:#014486}\n#s92 .d-btn.ghost{background:#fff;color:#0176D3;border:1px solid #0176D3}\n#s92 .d-input{background:#fff;border:1px solid #747474;border-radius:4px}\n#s92 .d-badge{background:#eaf5fe;color:#014486;border-radius:4px;font-weight:700}\n#s92 .d-prog{height:8px;background:#fff;border:1px solid #e5e5e5;border-radius:0}#s92 .d-prog i{background:linear-gradient(90deg,#1B96FF,#2E844A)}\n#s92 .d-card{background:#fff;border:1px solid #e5e5e5;border-radius:4px}"
+}

@@ -1,0 +1,29 @@
+{
+  "id": "s91",
+  "name": "Atlassian · Canvas",
+  "en": "Atlassian Canvas",
+  "era": "2019 设计系统合并 · 协作蓝",
+  "desc": "Jira 与 Confluence 的统一宪法：Canvas 蓝 + 菱形状态徽标（lozenge）——让「工单在流动」这件事在两百个内部系统里长得一模一样。",
+  "demoHTML": "<div class='d-nav'><span class='d-logo'>◆ Canvas</span><nav class='d-links'><span>Board</span><span>Backlog</span><span>Reports</span></nav></div><div><h3 class='d-h'>Sprint 24 · 还剩 6 天</h3><p class='d-p'>燃尽图的每一个点都是一次站会——Atlassian 把「过程可视化」做成了信仰。</p></div><div class='d-row'><button class='d-btn'>Create issue</button><button class='d-btn ghost'>Bulk edit</button></div><div class='d-row'><input class='d-input' placeholder='JQL: assignee = currentUser()'></div><div class='d-badges'><span class='d-badge'>TO DO</span><span class='d-badge'>IN PROGRESS</span><span class='d-badge'>DONE</span></div><div class='d-prog'><i></i></div><div class='d-card'>PROJ-142 · 登录页改版 · 3h 剩余 · 头像堆叠显示 4 人协作中。</div>",
+  "spec": {
+    "idea": "Atlassian 的野心是让「团队协作」拥有一套通用视觉语法：Canvas Design System 合并了旧 Atlassian Design 与 Forge，蓝是唯一的品牌声量——导航、链接、主按钮、焦点环全部 #0052CC 系，其余让位灰阶。状态用 lozenge 菱形胶囊表达，扫一眼整块看板就知道哪里在流血。",
+    "font": "Charlie / IBM Plex 气质中性无衬线：UI 14px 基准，标题仅 20/24 两级——字重的克制换来高密度表格的可读性。",
+    "color": "N50 底 #FAFBFC、纯白容器、正文 #172B4D 深墨蓝灰；品牌蓝 #0052CC 管交互，成功 #36B37E、警告 #FFAB00、危险 #DE350B 语义四色专供 lozenge。",
+    "space": "8px 网格刚性执行，侧栏 240px、内容区 1040px 定宽，表格式行高 36/44 两档——为键盘党的密度信仰。",
+    "shape": "3px 极小圆角几乎是直角：Atlassian 认为圆角是玩具的语言，表格线才诚实；lozenge 用 2px 圆角菱形。",
+    "shadow": "Elevation 两级：浮层阴影 + 1px 边框；卡片本体几乎无影——层级让位于边框秩序。",
+    "card": "Issue 卡（编号+头像+lozenge）、看板列容器、全局横幅 Banner——三种卡撑起 Scrum 世界。",
+    "icon": "Feather 系 2px 线性图标，单色跟随文字；导航图标比内容图标大一档形成锚点。",
+    "comp": "侧边导航树 + JQL 搜索条 + lozenge 状态 + 头像堆叠，是工程组织的通用制服。"
+  },
+  "use": "项目管理、工单系统、DevOps 控制台、企业协作",
+  "avoid": "消费级娱乐界面、图片主导的瀑布流、情绪化品牌页",
+  "refs": ["atlassian.design", "Canvas Design System", "Jira 界面", "Confluence 界面"],
+  "prompt": "atlassian canvas design system ui, brand blue 0052cc on canvas grey fabfcf background, lozenge status badges in semantic colors, near-square 3px corners, dense data tables with 36px rows, avatar stacks, jira board card language, engineering-organization aesthetic, ibm plex neutral typography",
+  "pal": ["#0052CC", "#FAFBFC", "#172B4D", "#FFFFFF"],
+  "meta": "企业协作,light,高效",
+  "gene": ["flat", "sidebarish", "issue", "thin"],
+  "maps": { "shape": "sharp", "type": "grotesk", "icon": "thin", "comp": "flat", "motion": "linear", "shadow": "none" },
+  "readmeEntry": "Atlassian Canvas 协作蓝",
+  "skin": "#s91 .stage{background:#FAFBFC;color:#172B4D}\n#s91 .d-nav{background:#fff;border:1px solid #DFE1E6;border-radius:3px}\n#s91 .d-logo{font-weight:700;color:#0052CC}\n#s91 .d-links span{opacity:.65;color:#5E6C84}#s91 .d-links span:hover{opacity:1;color:#0052CC}\n#s91 .d-h{font-weight:600;font-size:19px}\n#s91 .d-p{color:#5E6C84}\n#s91 .d-btn{background:#0052CC;color:#fff;border-radius:3px;font-weight:500}\n#s91 .d-btn:hover{background:#0065FF}\n#s91 .d-btn.ghost{background:#F1F2F4;color:#172B4D}\n#s91 .d-input{background:#FAFBFC;border:2px solid #DFE1E6;border-radius:3px;color:#172B4D}\n#s91 .d-input:focus{border-color:#4C9AFF;background:#fff}\n#s91 .d-badge{background:#DEEBFF;color:#0052CC;border-radius:2px;font-weight:700;font-size:9px;letter-spacing:.06em;padding:2px 6px}\n#s91 .d-prog{height:4px;background:#DFE1E6}#s91 .d-prog i{background:#0052CC}\n#s91 .d-card{background:#fff;border:1px solid #DFE1E6;border-bottom-width:2px;border-radius:3px}"
+}

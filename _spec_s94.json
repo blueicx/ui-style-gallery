@@ -1,0 +1,29 @@
+{
+  "id": "s94",
+  "name": "Uber · 极简调度台",
+  "en": "Uber Minimal Dispatch",
+  "era": "2018 品牌重塑 · 一张地图",
+  "desc": "整个 App 只有一张地图 + 一个黑色胶囊按钮：Uber 用「减法」证明工具类 App 的终极形态是没有 UI，只有任务。",
+  "demoHTML": "<div class='d-nav'><span class='d-logo'>Uber</span><nav class='d-links'><span>行程</span><span>钱包</span><span>帮助</span></nav></div><div><h3 class='d-h'>你想去哪里？</h3><p class='d-p'>搜索框即首页——Uber 把「目的地」放在屏幕最顶部，因为那是用户唯一的意图。</p></div><div class='d-row'><button class='d-btn'>确认目的地</button><button class='d-btn ghost'>稍后叫车</button></div><div class='d-row'><input class='d-input' placeholder='输入目的地'></div><div class='d-badges'><span class='d-badge'>UberX ¥23</span><span class='d-badge'>6 分钟到达</span></div><div class='d-prog'><i></i></div><div class='d-card'>司机卡片：黑白头像 + 车牌等宽字体 + 一个黑色按钮——三行完成信任交接。</div>",
+  "spec": {
+    "idea": "2018 年 Uber 换标（从花体到粗黑「UP」字标）同步收敛设计语言：黑白主导、地图为唯一彩色图层、品牌黑 #000000 承担所有主操作。逻辑是「移动即服务」：界面越透明，任务越突出——叫车 4 秒完成，UI 的存在感必须低于需求本身。",
+    "font": "Uber Move 定制无衬线（接近 Inter/Neue Haas）：标题 24-32px 粗黑，正文 15px，按钮 16px 字重 600——像路牌一样直给。",
+    "color": "黑白两极：#000 按钮 + #FFF 卡片 + #EEE 分隔；地图深灰 #242A31 作环境底色；品牌绿 #06C167 只在「已接单」动效一闪。",
+    "space": "底部抽屉式布局（bottom sheet）：地图占 60%、操作区 40% 可上拉；卡片内 16px 内边距，按钮 52px 高拇指可达。",
+    "shape": "卡片 12px 圆角 + 底部弹层 16px 大圆角；按钮全胶囊——圆润但绝不多情。",
+    "shadow": "弹层用大阴影浮在地图上（0 -8px 24px #0002），卡片无影——深度只服务于「抽屉盖住地图」一个动作。",
+    "card": "车型选择卡（价格+ETA+图）、行程状态卡（进度条+司机）、支付卡——三张卡是全部产品。",
+    "icon": "单色线性 + 黑白面性两套；车辆插画用极简等距剪影——图标像交通标志一样无装饰。",
+    "comp": "全屏地图 + bottom sheet + 黑胶囊按钮 + 等宽车牌，是「调度类」产品的范式原型。"
+  },
+  "use": "出行/配送/调度工具、地图类 App、任务型极简服务",
+  "avoid": "内容社区、娱乐流、需要氛围感的场景",
+  "refs": ["Uber Brand Book 2018", "Uber Design Medium", "UP 字标", "bottom sheet 规范"],
+  "prompt": "uber minimalist dispatch app ui, pure black pill buttons on white cards, full-bleed dark map as only color layer, bottom sheet task drawer, uber move bold signage typography, license plates in monospace, 4-second task completion design, transit-signage icon discipline, motion green flash accent",
+  "pal": ["#000000", "#FFFFFF", "#000000", "#F0F0F0"],
+  "meta": "出行工具,light,高效",
+  "gene": ["flat", "bottomtabs", "browser", "bold"],
+  "maps": { "shape": "pill", "type": "grotesk", "icon": "bold", "comp": "pillb", "motion": "spring", "shadow": "layered" },
+  "readmeEntry": "Uber 极简调度台",
+  "skin": "#s94 .stage{background:#f5f5f5;color:#000}\n#s94 .stage::before{content:'';position:absolute;inset:0;background:linear-gradient(120deg,#242a3155,transparent 40%),radial-gradient(60% 50% at 70% 20%,#242a3122,transparent)}\n#s94 .d-nav{background:#fff;border-radius:16px;border:1px solid #eee}\n#s94 .d-logo{font-weight:800;letter-spacing:-.02em}\n#s94 .d-links span{opacity:.55;font-weight:600}#s94 .d-links span:hover{opacity:1}\n#s94 .d-h{font-weight:800;letter-spacing:-.02em}\n#s94 .d-p{color:#424242}\n#s94 .d-btn{background:#000;color:#fff;border-radius:999px;font-weight:600}\n#s94 .d-btn:hover{background:#222}\n#s94 .d-btn.ghost{background:#eee;color:#000}\n#s94 .d-input{background:#eee;border:0;border-radius:999px;color:#000;font-weight:500}\n#s94 .d-badge{background:#000;color:#fff;border-radius:6px;font-weight:600;font-family:var(--mono)}\n#s94 .d-prog{background:#ddd}#s94 .d-prog i{background:#000}\n#s94 .d-card{background:#fff;border:0;border-radius:12px;box-shadow:0 10px 30px #0000001a}"
+}

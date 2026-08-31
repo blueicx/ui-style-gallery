@@ -1,0 +1,29 @@
+{
+  "id": "s95",
+  "name": "Revolut · 暗夜金融",
+  "en": "Revolut Dark Finance",
+  "era": "2015 至今 · 新银行美学",
+  "desc": "把银行装进夜店：纯黑画布上悬浮蓝紫青渐变卡片——数字银行发现「钱」在暗色里比在亮色里更有掌控感。",
+  "demoHTML": "<div class='d-nav'><span class='d-logo'>Revolut</span><nav class='d-links'><span>主页</span><span>记账</span><span>商店</span></nav></div><div><h3 class='d-h'>£ 4,286.50</h3><p class='d-p'>余额是全场唯一的主角——其余全部退成夜色，让钱发光。</p></div><div class='d-row'><button class='d-btn'>添加资金</button><button class='d-btn ghost'>兑换</button></div><div class='d-row'><input class='d-input' placeholder='搜索交易…'></div><div class='d-badges'><span class='d-badge'>虚拟卡</span><span class='d-badge'>加密</span><span class='d-badge'>股票</span></div><div class='d-prog'><i></i></div><div class='d-card'>交易行：商户 logo 圆片 + 类目名 + 右侧金额涨绿跌红——暗色把语义色放大成情绪。</div>",
+  "spec": {
+    "idea": "Revolut 用暗色重写了银行界面的心理：传统银行用白底蓝章营造机构可信度，它用 #191C1F 夜色 + 全息渐变卡片营造「你掌控钱」的私人感。每张卡（实体/虚拟/加密）都是一枚渐变宝石，滑动切卡是 App 的招牌动作。",
+    "font": "Inter 定制版 + 等宽金额：余额 34px 大数字 tabular，交易 15px，字重 500-700 之间绝不轻浮。",
+    "color": "夜底 #191C1F，卡片 #27282F；标志渐变从 #00B5F2 青经 #5B3DF5 紫到 #00E09E 绿；语义涨绿 #00C076 跌红 #FF5C5C。",
+    "space": "大卡片 24px 内边距 + 屏幕左右 16px 安全距；卡片间距 12px 形成牌堆层叠感，底部导航 64px 拇指区。",
+    "shape": "卡片 16-20px 大圆角 + 胶囊按钮：钱要圆润可亲近，拒付率藏在半径里。",
+    "shadow": "不用传统投影，用渐变自发光（glow）——卡片边缘溢出的彩色光晕就是「这是一张活卡」的证明。",
+    "card": "银行卡片（可横滑换卡）、余额资产卡、交易行——三种卡构成手机里的整间银行。",
+    "icon": "线性细图标单色 #AAA；品牌类图标（股票/加密）自带语义小色片。",
+    "comp": "卡堆轮播 + 资产九宫格 + 交易流，「新银行」品类的通用组件词汇。"
+  },
+  "use": "钱包/银行/加密资产类 App、高端会员产品、数据驾驶舱",
+  "avoid": "白底文档型工具、政企后台、内容阅读器",
+  "refs": ["Revolut App", "Fintech dark UI 风潮", "全息银行卡设计"],
+  "prompt": "revolut style dark fintech app ui, near-black canvas 191c1f with holo gradient cards cyan-purple-green, glowing edges instead of shadows, big balance hero number, card stack carousel gesture, capsule action buttons, inter medium with tabular money, premium nighttime banking mood",
+  "pal": ["#00B5F2", "#191C1F", "#00E09E", "#5B3DF5"],
+  "meta": "金融工具,dark,高级",
+  "gene": ["flat", "bottomtabs", "finance", "fill"],
+  "maps": { "shape": "squircle", "type": "grotesk", "icon": "thin", "comp": "gradb", "motion": "morph", "shadow": "glow" },
+  "readmeEntry": "Revolut 暗夜金融",
+  "skin": "#s95 .stage{background:linear-gradient(165deg,#191C1F,#0c0d10);color:#fff}\n#s95 .d-nav{background:#27282F;border:1px solid #ffffff14;border-radius:16px}\n#s95 .d-logo{font-weight:700;background:linear-gradient(90deg,#00B5F2,#5B3DF5);-webkit-background-clip:text;background-clip:text;color:transparent}\n#s95 .d-links span{opacity:.6;color:#aaa}#s95 .d-links span:hover{opacity:1;color:#fff}\n#s95 .d-h{font-weight:700;letter-spacing:-.02em;font-variant-numeric:tabular-nums}\n#s95 .d-p{color:#8b8d94}\n#s95 .d-btn{background:linear-gradient(90deg,#00B5F2,#5B3DF5);color:#fff;border-radius:999px;font-weight:600;box-shadow:0 4px 18px #00b5f240}\n#s95 .d-btn:hover{filter:brightness(1.15)}\n#s95 .d-btn.ghost{background:#27282F;color:#cfd1d6;box-shadow:none}\n#s95 .d-input{background:#27282F;border:1px solid #ffffff14;border-radius:999px;color:#fff}\n#s95 .d-badge{background:linear-gradient(90deg,#00b5f222,#5b3df522);color:#9fd0ff;border:1px solid #ffffff1a;border-radius:999px}\n#s95 .d-prog{background:#27282F}#s95 .d-prog i{background:linear-gradient(90deg,#00E09E,#00B5F2)}\n#s95 .d-card{background:linear-gradient(140deg,#27282F,#1d1e24);border:1px solid #ffffff14;border-radius:16px;box-shadow:0 8px 28px #00b5f21f}"
+}

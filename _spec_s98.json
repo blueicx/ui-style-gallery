@@ -1,0 +1,29 @@
+{
+  "id": "s98",
+  "name": "Pixel Art · 8-bit 像素",
+  "en": "Pixel Art UI",
+  "era": "1977-1995 · 低分辨率永生",
+  "desc": "把「看不清楚」做成信仰：整数缩放的方块、硬阴影、步进动画——像素 UI 是一封写给 CRT 时代的情书。",
+  "demoHTML": "<div class='d-nav'><span class='d-logo'>PIXEL MUSEU</span><nav class='d-links'><span>关卡</span><span>道具</span><span>排行榜</span></nav></div><div><h3 class='d-h'>WORLD 1-1</h3><p class='d-p'>网格 16×16，没有反锯齿——每一个方格都是手工点出来的，限制即风格。</p></div><div class='d-row'><button class='d-btn'>PRESS START</button><button class='d-btn ghost'>CONTINUE</button></div><div class='d-row'><input class='d-input' placeholder='ENTER NAME_'></div><div class='d-badges'><span class='d-badge'>×99</span><span class='d-badge'>1UP</span><span class='d-badge'>HP 8/8</span></div><div class='d-prog'><i></i></div><div class='d-card'>步进动画（step）：像素按钮只有 2 帧，按下时硬切而非缓动——机器慢的时代，动画也要一格一格走。</div>",
+  "spec": {
+    "idea": "Pixel Art 界面源自硬件极限：NES 时代一个精灵 8×8 像素。当限制变成选择，人们刻意保留方块语言——2px 边框代替圆角、4px 步进代替缓动。它是「反高清」宣言：在视网膜屏时代，模糊本身就是信息。",
+    "font": "像素字模（Press Start 2P / VT323 / m5x7）：全大写、字距慷慨；正文也用位图字体——绝不借真字体的光。",
+    "color": "限量调色板（PICO-8 16 色一类）：深蓝底 #1D2B53、红 #E43B44、绿 #2ECC71、天蓝 #29ADFF、黄 #FFCD75；色阶只有 3 档（暗/中/亮）。",
+    "space": "一切坐标为 4 的倍数（像素网格崇拜）；边框厚度恒为 2px；内边距 4/8/12。",
+    "shape": "无圆角——但直角要用 1px 切角假装：经典 NES 边框是 45° 缺角矩形。",
+    "shadow": "硬 offset 阴影（4px 4px 0 纯深色），模拟纸片剪贴；无模糊无渐变。",
+    "card": "对话框（带 2px 白边 + 缺角）与物品槽（slot 网格）——RPG 菜单结构的直接移植。",
+    "icon": "手绘点阵图标 16×16/24×24：描边 1px、内部平涂、高光只点一颗像素。",
+    "comp": "标题画面 + 对话框 + 血条槽，是复古游戏与潮流品牌的通用语法。"
+  },
+  "use": "游戏、潮玩品牌、成就系统、极客工具",
+  "avoid": "长文阅读、商务场景、对无障碍敏感的正经产品",
+  "refs": ["Press Start 2P / VT323", "PICO-8 调色板", "NES 精灵系统", "Aseprite"],
+  "prompt": "8-bit pixel art ui, pico-8 style limited palette on deep blue, hard 4px offset shadows no blur, 2px stepped borders with cut corners, bitmap press start typography uppercase, rpg dialogue boxes and item slots, grid-snapped everything, step timing animations no easing, crt nostalgia",
+  "pal": ["#E43B44", "#1D2B53", "#2ECC71", "#29ADFF"],
+  "meta": "复古游戏,dark,硬核",
+  "gene": ["retro", "arcade", "dialogbox", "bitmap"],
+  "maps": { "shape": "sharp", "type": "pixel", "icon": "ipix", "comp": "pixelb", "motion": "step", "shadow": "hard" },
+  "readmeEntry": "Pixel Art 8-bit 像素",
+  "skin": "#s98 .stage{background:#1d2b53;color:#fff;font-family:var(--mono)}\n#s98 .d-nav{background:#0f1a33;border:2px solid #fff;border-radius:0}\n#s98 .d-logo{font-weight:700;letter-spacing:.12em;color:#29ADFF}\n#s98 .d-links span{opacity:.7;color:#c8d6f0;text-transform:uppercase}#s98 .d-links span:hover{opacity:1;color:#ffcd75}\n#s98 .d-h{letter-spacing:.08em;color:#ffcd75;text-transform:uppercase}\n#s98 .d-p{color:#c8d6f0}\n#s98 .d-btn{background:#E43B44;color:#fff;border:2px solid #fff;border-radius:0;box-shadow:4px 4px 0 #0f1a33;font-weight:700;letter-spacing:.08em;text-transform:uppercase}\n#s98 .d-btn:hover{transform:translate(2px,2px);box-shadow:2px 2px 0 #0f1a33}\n#s98 .d-btn.ghost{background:#2ECC71;color:#0f1a33}\n#s98 .d-input{background:#0f1a33;border:2px solid #29ADFF;border-radius:0;color:#29ADFF;text-transform:uppercase}\n#s98 .d-badge{background:#29ADFF;color:#1D2B53;border-radius:0;font-weight:700}\n#s98 .d-prog{background:#0f1a33;border:2px solid #fff;border-radius:0}#s98 .d-prog i{background:#2ECC71}\n#s98 .d-card{background:#0f1a33;border:2px solid #fff;border-radius:0}"
+}

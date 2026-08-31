@@ -1,0 +1,24 @@
+<div class="overlay" id="tuner-overlay" role="dialog" aria-modal="true" aria-label="Token 调律台">
+  <div class="tuner-box">
+    <h3>🎚 Token 调律台 <span style="font-size:11px;color:var(--muted);font-weight:400" id="tuner-who"></span></h3>
+    <p style="font-size:12px;color:var(--muted);line-height:1.6">拖动滑杆微调圆角 / 间距 / 阴影三参数，右侧活体展台实时响应；满意后可一键复制调后 Token。</p>
+    <div class="tuner-grid">
+      <label>圆角 <input type="range" id="tu-r" min="0" max="28" value="14"><output id="tu-rv">14px</output></label>
+      <label>间距 <input type="range" id="tu-g" min="4" max="28" value="14"><output id="tu-gv">14px</output></label>
+      <label>阴影 <input type="range" id="tu-s" min="0" max="40" value="12"><output id="tu-sv">12px</output></label>
+    </div>
+    <style id="tuner-style"></style>
+    <div id="tuner-stage"></div>
+    <pre id="tuner-out" style="margin-top:12px;padding:12px;border-radius:10px;background:var(--panel);border:1px solid var(--line);font-family:var(--mono);font-size:11px;line-height:1.7;white-space:pre-wrap"></pre>
+    <div class="tuner-act">
+      <button class="mini" id="tuner-copy">⧉ 复制调后 Token</button>
+      <button class="mini" data-close>✕ 关闭</button>
+    </div>
+  </div>
+</div>
+<section class="wrap view" id="view-paths" aria-label="策展学习路径">
+  <div class="lex-head"><h2>🧭 策展路径 <span style="font-size:13px;color:var(--muted);font-weight:400">按真实任务把风格串成巡展路线</span></h2></div>
+  <p class="dhlead">每条路径是一份「做 X 产品该看哪几台」的策展清单——点单卡直达展台，点「▶ 开始巡展」后底部出现导航条，用 ← → 或键盘 J/K 逐台精读。</p>
+  <div id="paths-list"></div>
+</section>
+<div id="path-tour" hidden role="region" aria-label="巡展导航"></div>

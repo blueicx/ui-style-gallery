@@ -18,7 +18,7 @@ const fi = process.argv.indexOf('--file');
 if (fi < 0 || !process.argv[fi + 1]) {
   console.log('用法: node add_style.js --file <spec.json>'); process.exit(1);
 }
-const S = JSON.parse(fs.readFileSync(path.resolve(process.argv[fi + 1]), 'utf8'));
+const S = JSON.parse(fs.readFileSync(path.resolve(process.argv[fi + 1]), 'utf8').replace(/^\uFEFF/, ''));
 const id = S.id;
 if (!/^s\d+$/.test(id)) { console.log('FAIL: id 须形如 s78'); process.exit(1); }
 const num = parseInt(id.slice(1));
@@ -78,14 +78,14 @@ for (const [hall, anchor, val] of HALLS) {
   html = html.slice(0, abs) + ins + html.slice(abs);
   edits++;
 }
-// ── 5. GENE 尾 ──
+// ── 5. GENE 尾（锚定 prev 条目数组的闭合 ]，防尾行带 `},` 时插到对象外）──
 {
   const gi = html.indexOf('const GENE={'); if (gi < 0) fail('GENE 缺失');
   const iico = html.indexOf('const ICO={', gi); if (iico < 0) fail('ICO 缺失');
   const li = html.lastIndexOf(prev + ":['", iico); if (li < 0) fail('GENE 前驱缺失');
-  const le = html.indexOf('\n', li); if (le < 0 || le > iico) fail('GENE 行尾缺失');
+  const cb = html.indexOf(']', li + prev.length + 3); if (cb < 0 || cb > iico) fail('GENE 数组闭合缺失');
   const geneArr = S.gene.map(x => "'" + x + "'").join(',');
-  html = html.slice(0, le) + `,\n   ${id}:[${geneArr}]` + html.slice(le);
+  html = html.slice(0, cb + 1) + `,\n   ${id}:[${geneArr}]` + html.slice(cb + 1);
   edits++;
 }
 // ── 6. 皮肤 CSS ──

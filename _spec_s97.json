@@ -1,0 +1,29 @@
+{
+  "id": "s97",
+  "name": "Risograph · 孔版印刷",
+  "en": "Risograph Print",
+  "era": "1980 复刻 · Zine 文艺复兴",
+  "desc": "油墨永远印不准：荧光专色错位叠印 + 颗粒纸底——riso 把机器的瑕疵当作签名，每张都在声明「这是手工的」。",
+  "demoHTML": "<div class='d-nav'><span class='d-logo'>RISO CLUB</span><nav class='d-links'><span>Zine</span><span>海报</span><span>工作坊</span></nav></div><div><h3 class='d-h'>第 12 期 · 夜航</h3><p class='d-p'>两套专色、三次走纸、百分百的墨点——不完美才是印刷品的人性。</p></div><div class='d-row'><button class='d-btn'>订阅年刊</button><button class='d-btn ghost'>往期试读</button></div><div class='d-row'><input class='d-input' placeholder='邮箱地址'></div><div class='d-badges'><span class='d-badge'>荧光粉</span><span class='d-badge'>孔版蓝</span><span class='d-badge'>奶油纸</span></div><div class='d-prog'><i></i></div><div class='d-card'>错位印（misregistration）：色块偏移 2px 叠印时边缘生出第三色——Riso 用户管这叫「惊喜层」。</div>",
+  "spec": {
+    "idea": "Risograph 本是 1980 年代的低成本孔版复印机（mimeograph 后裔），2010 年代被独立出版界翻红成一种风格：只有 1-2 支荧光专色、每次叠印必错位、半调网点肉眼可见。数字界面借它的「印刷不精确」对抗 AI 时代的无菌感——错位、网点、纸黄都是叙事。",
+    "font": "工业字重的 grotesque + 打字机等宽混排；标题常全大写带脏污质感，正文允许轻微歪斜像走纸跑偏。",
+    "color": "奶油纸底 #F2E9D8；专色荧光粉 #FF48B0 + 孔版蓝 #0078BF；叠印处产生紫/灰第三色；绝不用纯黑，油墨黑是深棕 #2B2118。",
+    "space": "版式像独立杂志：大出血边距、非对称网格、文本框旋转 0.5°——留白是「页边距」不是「呼吸感」。",
+    "shape": "直角 + 裁切角（cut corner）；边框用 2px 实线或虚线，像裁切标记。",
+    "shadow": "没有渐变阴影——用硬 offset（3px 3px 0 专色）模拟叠印错位，这是 Riso 风格的灵魂。",
+    "card": "贴纸卡（旋转 + offset 硬影）、半调网点块（radial-gradient 圆点阵列）、票券副券。",
+    "icon": "粗线条单色图标 + 网点填充；图标套色时模拟两次套准偏移。",
+    "comp": "网点底纹 + offset 硬影 + 套色文字，是独立出版/艺术活动物料的经典配方。"
+  },
+  "use": "Zine/艺术活动、独立音乐、市集海报、文创品牌",
+  "avoid": "企业软件、金融界面、需要精准数据呈现的场景",
+  "refs": ["Riso 孔版印刷", "荧光粉 Fluorescent Pink #FF48B0", "半调网点 halftone", "zine 文化复兴"],
+  "prompt": "risograph print ui, cream paper background with visible halftone dot screens, fluorescent pink and riso blue duotone overprint, misregistered 3px offset hard shadows, stamp-cut bold uppercase type, zine collage sticker cards slightly rotated, analog ink imperfection as design language",
+  "pal": ["#FF48B0", "#F2E9D8", "#0078BF", "#2B2118"],
+  "meta": "印刷亚文化,light,手工",
+  "gene": ["print", "poster", "halftone", "overprint"],
+  "maps": { "shape": "cut", "type": "display", "icon": "glyph", "comp": "brutalb", "motion": "magnet", "shadow": "split" },
+  "readmeEntry": "Risograph 孔版印刷",
+  "skin": "#s97 .stage{background:#f2e9d8;color:#1b2a6b;background-image:radial-gradient(#ff48b026 1px,transparent 1.6px);background-size:7px 7px}\n#s97 .d-nav{background:#fffaf0;border:2px solid #1b2a6b;border-radius:0;box-shadow:3px 3px 0 #ff48b0}\n#s97 .d-logo{font-weight:900;text-transform:uppercase;letter-spacing:.06em;color:#1b2a6b;text-shadow:2px 2px 0 #ff48b04d}\n#s97 .d-links span{text-transform:uppercase;font-weight:700;color:#0078bf}#s97 .d-links span:hover{color:#ff48b0}\n#s97 .d-h{font-weight:900;text-transform:uppercase;letter-spacing:.02em}\n#s97 .d-p{color:#2b2118}\n#s97 .d-btn{background:#ff48b0;color:#fffaf0;border:2px solid #1b2a6b;border-radius:0;box-shadow:3px 3px 0 #1b2a6b;font-weight:800;text-transform:uppercase;letter-spacing:.05em}\n#s97 .d-btn:hover{transform:translate(-1px,-1px);box-shadow:4px 4px 0 #1b2a6b}\n#s97 .d-btn.ghost{background:#0078bf;color:#fffaf0}\n#s97 .d-input{background:#fffaf0;border:2px dashed #1b2a6b;border-radius:0}\n#s97 .d-badge{background:#1b2a6b;color:#ffd9ef;border-radius:0;font-weight:800;letter-spacing:.04em}\n#s97 .d-prog{background:#fffaf0;border:2px solid #1b2a6b;border-radius:0}#s97 .d-prog i{background:#ff48b0}\n#s97 .d-card{background:#fffaf0;border:2px solid #1b2a6b;border-radius:0;box-shadow:5px 5px 0 #ff48b066;transform:rotate(-.4deg)}"
+}

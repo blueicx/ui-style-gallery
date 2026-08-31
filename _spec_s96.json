@@ -1,0 +1,29 @@
+{
+  "id": "s96",
+  "name": "Claymorphism · 黏土拟物",
+  "en": "Claymorphism",
+  "era": "2020 · 软萌三维",
+  "desc": "把按钮捏成橡皮泥：内柔光 + 外厚影让界面变成黏土手工课——新拟声的瘦身版，拟物回归，这次拟的是玩具。",
+  "demoHTML": "<div class='d-nav'><span class='d-logo'>Claytic</span><nav class='d-links'><span>课程</span><span>作品</span><span>材料</span></nav></div><div><h3 class='d-h'>今日捏一只猫</h3><p class='d-p'>每个控件都像刚被拇指按出凹痕——Claymorphism 的潜台词是：欢迎上手揉。</p></div><div class='d-row'><button class='d-btn'>开始捏</button><button class='d-btn ghost'>换颜色</button></div><div class='d-row'><input class='d-input' placeholder='给作品起个名…'></div><div class='d-badges'><span class='d-badge'>陶土粉</span><span class='d-badge'>薰衣草</span><span class='d-badge'>薄荷绿</span></div><div class='d-prog'><i></i></div><div class='d-card'>黏土开关（toggle）凹陷在面板里，按下去整颗球会鼓起来——物理感全靠阴影叙事。</div>",
+  "spec": {
+    "idea": "Claymorphism = Clay + Skeuomorphism：2020 年从新拟声（Neumorphism）分化出来的更软、更立体、更卡通的分支。它抛弃了「灰白丝滑」的性冷淡拟物，改用高饱和马卡龙色 + 夸张的层叠柔影，让每个组件看起来是一块可以被戳的黏土。儿童教育、宠物、创意工具是它的主场。",
+    "font": "圆角无衬线（Baloo/Nunito 一类），字重 700-800 才压得住圆滚滚的造型；标题常带手写感字距。",
+    "color": "奶油底 #FDF3EC；主体粉 #FCA8B8、蓝紫 #B6C8F5、薄荷 #A8E6CF；阴影不是黑而是加深的底色（#D9BFAE 系）——彩色的影子才像彩泥。",
+    "space": "大内边距（按钮 14px 24px）、元素间距宽绰——黏土之间要留出「按得下去」的空气。",
+    "shape": "16-24px 超大圆角 + 胶囊开关 + 不规则有机轮廓（blob）；几乎没有直角。",
+    "shadow": "招牌配方：外侧柔光投影（-10px -10px 白 + 10px 10px 加深底色）+ 底部实心厚影（0 6px 0 深色）模拟黏土厚度，按压态整体下移 2px。",
+    "card": "黏土容器卡（同底色 + 双层柔影）、鼓胀按钮、凹陷输入框——一套「可戳的表面」。",
+    "icon": "粗描边圆头图标 + 同色填充，常带 3D 高光点——图标本身就是迷你黏土雕塑。",
+    "comp": "鼓按钮 + 凹输入框 + 厚投影卡片，是软萌向产品的标准三件套。"
+  },
+  "use": "儿童/教育、宠物、创意工具、游戏化应用",
+  "avoid": "金融后台、企业软件、严肃信息密集界面",
+  "refs": ["Claymorphism (UxlDesign, 2020)", "Dribbble clay UI 风潮", "Nunito/Baloo 字体", "UI Faces 社区"],
+  "prompt": "claymorphism clay ui, macaron pastel blobs on cream background, thick bottom shadows 0 6px 0 plus dual soft glow drop shadows, puffy rounded buttons you want to press, inset indented inputs, organic squishy shapes, chubby bold rounded typeface, playful kid-craft mood",
+  "pal": ["#FCA8B8", "#FDF3EC", "#B6C8F5", "#A8E6CF"],
+  "meta": "软体拟物,light,萌趣",
+  "gene": ["soft", "topbar", "cards", "pastel"],
+  "maps": { "shape": "bubble", "type": "round", "icon": "skeuo", "comp": "neub", "motion": "jelly", "shadow": "layered" },
+  "readmeEntry": "Claymorphism 黏土拟物",
+  "skin": "#s96 .stage{background:radial-gradient(120% 100% at 50% 0%,#fdf3ec,#f5e3d7);color:#7c6270}\n#s96 .d-nav{background:#fdeee5;border:0;border-radius:20px;box-shadow:6px 6px 14px #d9bfae55,-6px -6px 14px #ffffffcc}\n#s96 .d-logo{font-weight:800;color:#e0768a}\n#s96 .d-links span{opacity:.7;color:#a58a94;font-weight:600}#s96 .d-links span:hover{opacity:1;color:#e0768a}\n#s96 .d-h{font-weight:800;color:#7c6270}\n#s96 .d-p{color:#a58a94}\n#s96 .d-btn{background:#fca8b8;color:#fff;border-radius:16px;font-weight:800;box-shadow:0 6px 0 #e0768a,0 12px 18px #d98a9a4d}\n#s96 .d-btn:hover{transform:translateY(2px);box-shadow:0 4px 0 #e0768a}\n#s96 .d-btn.ghost{background:#b6c8f5;color:#fff;box-shadow:0 6px 0 #8ba3e0,0 12px 18px #8ba3e04d}\n#s96 .d-input{background:#fdeee5;border:0;border-radius:16px;color:#7c6270;box-shadow:inset 4px 4px 8px #d9bfae66,inset -4px -4px 8px #ffffffdd}\n#s96 .d-badge{background:#fff;border-radius:999px;color:#e0768a;font-weight:700;box-shadow:3px 3px 8px #d9bfae55,-3px -3px 8px #fff}\n#s96 .d-prog{background:#fdeee5;border-radius:999px;box-shadow:inset 3px 3px 6px #d9bfae66}#s96 .d-prog i{background:#fca8b8;border-radius:999px}\n#s96 .d-card{background:#fdeee5;border:0;border-radius:22px;box-shadow:10px 10px 20px #d9bfae55,-10px -10px 20px #ffffffcc}"
+}

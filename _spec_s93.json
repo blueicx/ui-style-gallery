@@ -1,0 +1,29 @@
+{
+  "id": "s93",
+  "name": "Adobe · Spectrum",
+  "en": "Adobe Spectrum",
+  "era": "2017 设计系统 · 创意工具宪法",
+  "desc": "给 Photoshop 到 XD 全部工具立的一部宪法：深炭灰界面 + 高饱和强调色——因为用户的作品才是彩色，界面必须退成画布边框。",
+  "demoHTML": "<div class='d-nav'><span class='d-logo'>Spectrum</span><nav class='d-links'><span>File</span><span>Edit</span><span>View</span></nav></div><div><h3 class='d-h'>Layer: Hero.jpg</h3><p class='d-p'>工具界面统一使用 #1F1F1F 深炭灰——不是审美偏好，是让照片/插画的色彩判断不被环境色污染。</p></div><div class='d-row'><button class='d-btn'>Export</button><button class='d-btn ghost'>Reset</button></div><div class='d-row'><input class='d-input' placeholder='Properties: opacity 100%'></div><div class='d-badges'><span class='d-badge'>RGB</span><span class='d-badge'>sRGB</span><span class='d-badge'>CMYK</span></div><div class='d-prog'><i></i></div><div class='d-card'>颜色面板：13 语义色 + 4 强调色轮转，Adobe 蓝 #1473E6 只做「当前选中」。</div>",
+  "spec": {
+    "idea": "Spectrum 存在的理由是让 100+ 款 Adobe 工具看起来像一家人：统一的深炭灰 UI、统一的组件尺寸刻度、统一的语言（Scale 命名：size-50/100/200…）。它甚至为色彩管理而设计——界面绝不能带色偏，于是所有暗色都从中性 #1F1F1F 派生，彩色只属于用户的画布。",
+    "font": "Adobe Clean / Source Sans 家族：14px 基准，Scale 令牌驱动（11/13/14/16/18/20/22），字重只有 Regular 与 Bold 两档。",
+    "color": "UI 底 #1F1F1F/#2C2C2C/#3B3B3B 三段深炭灰；文本 #EFEFEF；强调色 #1473E6 Adobe 蓝只给焦点与选中；亮色主题用 #FFFFFF + #6E6E6E。",
+    "space": "命名刻度 spacing-50(4px)→spacing-200(16px)→spacing-400(32px)：间距不是数字而是令牌，跨工具调用同一名字得到同一结果。",
+    "shape": "4px 统一圆角（面板 8px），按钮与输入框永远同半径——工具软件的几何应当像卡尺一样一致。",
+    "shadow": "暗色主题下不用阴影而用 1px 亮边（#404040）表达边界——深色里阴影会消失，边框才是可靠的层级语言。",
+    "card": "面板（Panel）、检视器（Inspector）、工具栏（Toolbar）——Spectrum 的卡片是为「专业软件三栏结构」而生的容器词汇。",
+    "icon": "线性图标 2 档尺寸（18/22px），Adobe 产品图标保留品牌色——系统里唯一被允许彩色的图标类。",
+    "comp": "Scale 令牌系统 + 双色主题 + 高密度控件，是创意工具与专业软件的设计宪法。"
+  },
+  "use": "专业工具、编辑器、色彩敏感型软件、跨端设计系统",
+  "avoid": "轻量营销站、大众消费 App、内容优先的博客",
+  "refs": ["spectrum.adobe.com", "Adobe Clean 字体", "Scale 令牌", "React Spectrum"],
+  "prompt": "adobe spectrum design system ui, neutral charcoal 1f1f1f dark chrome, adobe blue 1473e6 selection accent, 1px light borders instead of shadows, scale tokens spacing-50 to 400, professional creative tool panels and inspectors, adobe clean typography, canvas-color-neutrality doctrine, dense pro-software controls",
+  "pal": ["#1473E6", "#1F1F1F", "#EFEFEF", "#3B3B3B"],
+  "meta": "创意工具,dark,专业",
+  "gene": ["flat", "topbar", "canvas", "thin"],
+  "maps": { "shape": "small", "type": "grotesk", "icon": "thin", "comp": "flat", "motion": "linear", "shadow": "none" },
+  "readmeEntry": "Adobe Spectrum 工具宪法",
+  "skin": "#s93 .stage{background:linear-gradient(160deg,#2c2c2c,#1f1f1f);color:#efefef}\n#s93 .d-nav{background:#3b3b3b;border:1px solid #4a4a4a;border-radius:4px}\n#s93 .d-logo{font-weight:700;color:#1473E6}\n#s93 .d-links span{opacity:.7;color:#bdbdbd}#s93 .d-links span:hover{opacity:1;color:#fff}\n#s93 .d-h{font-weight:700;color:#efefef}\n#s93 .d-p{color:#b3b3b3}\n#s93 .d-btn{background:#1473E6;color:#fff;border-radius:4px;font-weight:700}\n#s93 .d-btn:hover{background:#0D66D0}\n#s93 .d-btn.ghost{background:#404040;color:#efefef;border:1px solid #4f4f4f}\n#s93 .d-input{background:#2c2c2c;border:1px solid #4f4f4f;border-radius:4px;color:#efefef}\n#s93 .d-badge{background:#1473E622;color:#4b9cf5;border:1px solid #1473E655;border-radius:4px}\n#s93 .d-prog{background:#404040}#s93 .d-prog i{background:#1473E6}\n#s93 .d-card{background:#323232;border:1px solid #404040;border-radius:4px}"
+}

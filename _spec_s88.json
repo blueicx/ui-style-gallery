@@ -1,0 +1,29 @@
+﻿{
+  "id": "s88",
+  "name": "美团 · 袋鼠设计",
+  "en": "Meituan Kangaroo",
+  "era": "2023 品牌焕新 · 街边可读性",
+  "desc": "把「大胆黄」做成体系：黄底黑字的高对比按钮 + 圆润袋鼠形象——外卖战场的铁律是三秒认出你，辨识度即转化率。",
+  "demoHTML": "<div class='d-nav'><span class='d-logo'>美团</span><nav class='d-links'><span>外卖</span><span>团购</span><span>酒店民宿</span></nav></div><div><h3 class='d-h'>帮大家吃得更好，生活更好。</h3><p class='d-p'>黄块按钮配黑字而非白字——黄色上的黑字读得更快，街边场景的字体科学。</p></div><div class='d-row'><button class='d-btn'>点外卖</button><button class='d-btn ghost'>领神券</button></div><div class='d-row'><input class='d-input' placeholder='搜奶茶、炸鸡、火锅…'></div><div class='d-badges'><span class='d-badge'>满25减8</span><span class='d-badge'>神券</span><span class='d-badge'>加速配送</span></div><div class='d-prog'><i></i></div><div class='d-card'>商家卡：评分 4.8 · 月售 2000+ · 配送 28 分钟——决策三件套一行排齐。</div>",
+  "spec": {
+    "idea": "一个日订单量以亿计的生活平台，把视觉押在一种黄上：美团黄只在 CTA、选中态与券出现，其余全部让位白底黑字。黄色是街上小招牌的颜色——高饱和、低价感知、跨人群可读，一套品牌色完成了三亿用户的下单教育。",
+    "font": "汉仪美团体气质圆黑：标题粗重、正文 14px 起、按钮字 15px 特粗——一切为大屏户外与 3 秒决策服务，字大行疏不是简陋而是街边生存法则。",
+    "color": "美团黄 #ffd100 铺在纯白 #ffffff 上；正文黑 #1a1a1a，黄上永远配黑字（AA 对比度 12:1 级）；灰 #f7f7f7 做券区与列表底。",
+    "space": "首页金刚区 5 列宫格、16px 卡片间距；搜索胶囊 56px 高为拇指热区让路；信息密度刻意「超市货架」化。",
+    "shape": "12–16px 大圆角 + 全胶囊搜索框；袋鼠轮廓本身就是圆的——几何与吉祥物互为证据。",
+    "shadow": "普通卡片轻投影；神券与红包卡用黄光晕浮起——「优惠在发光」是最直白的层级语言。",
+    "card": "商家卡（评分/月售/配送时长一行）、票根神券卡（虚线撕口）、金刚区图标格——三种卡型覆盖 80% 决策界面。",
+    "icon": "面性填充图标 + 黄底黑形双色关系，像一块块小招牌；品类图标全部重绘为食物化造型。",
+    "comp": "胶囊搜索 + 黄黑 CTA + 票根券组件，构成到店/到家业务的通用三件套。"
+  },
+  "use": "本地生活、到店团购、高频交易工具、下沉市场产品",
+  "avoid": "严肃金融、奢侈品、性冷淡极简品牌",
+  "refs": ["美团 App 2023 焕新", "袋鼠形象设计", "美团设计中心博客", "品牌 VI 手册"],
+  "prompt": "meituan local services app ui, vivid kangaroo yellow ffd100 on pure white, bold black text on yellow buttons, super-app grid of category icons, coupon tickets with dashed perforation, fat pill search bar, friendly rounded grotesque type, street-sign readability, high-contrast commerce energy",
+  "pal": ["#ffd100", "#ffffff", "#1a1a1a", "#f7f7f7"],
+  "meta": "生活服务,light,亲切",
+  "gene": ["flat", "topbar", "gridwall", "fill"],
+  "maps": { "shape": "round", "type": "round", "icon": "fill", "comp": "pillb", "motion": "bounce", "shadow": "soft" },
+  "readmeEntry": "美团袋鼠设计",
+  "skin": "#s88 .stage{background:#fff;color:#1a1a1a}\n#s88 .stage::before{content:'';position:absolute;inset:0;background:radial-gradient(50% 42% at 86% 6%,#ffd1001f,transparent 60%);pointer-events:none}\n#s88 .d-nav{background:#fffbe6;border:1px solid #f0e39e;border-radius:14px}\n#s88 .d-logo{font-weight:800;color:#1a1a1a}\n#s88 .d-links span{opacity:.62}#s88 .d-links span:hover{opacity:1;background:#ffd10033;border-radius:8px}\n#s88 .d-h{letter-spacing:-.02em;font-weight:800}\n#s88 .d-p{color:#6b6b6b}\n#s88 .d-btn{background:#ffd100;color:#1a1a1a;font-weight:800;border-radius:999px}\n#s88 .d-btn:hover{background:#ffc400;transform:translateY(-1px)}\n#s88 .d-btn.ghost{background:#fff;color:#1a1a1a;border:2px solid #ffd100}\n#s88 .d-input{background:#fff;border:2px solid #ffd100;border-radius:999px;color:#1a1a1a}\n#s88 .d-badge{background:#ffd100;color:#1a1a1a;border-radius:6px;font-weight:700}\n#s88 .d-prog{height:5px;background:#f0ead0;border-radius:99px}#s88 .d-prog i{background:linear-gradient(90deg,#ffe45c,#ffd100)}\n#s88 .d-card{background:#fff;border:1px solid #f2eecd;border-radius:14px;box-shadow:0 6px 18px #ffd10024}"
+}
