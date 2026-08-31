@@ -1,3 +1,6 @@
 _dom.txt
 _err.txt
 node_modules/
+_*.tmp
+_gh_setup.ps1
+_cred.ps1
