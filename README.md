@@ -1,5 +1,8 @@
 # UI 风格图鉴 · Interface Style Atlas Vol.02
 
+🌐 **在线版 LIVE**：https://blueicx.github.io/ui-style-gallery/ ｜ 📦 GitHub：https://github.com/blueicx/ui-style-gallery
+🈶 中文 ｜ [🌍 English](README.en.md)
+
 一个「活体博物馆」式的 UI 设计风格参考图鉴：**100 种设计风格**在完全相同的组件基线（导航 / 按钮 / 表单 / 卡片）上横向并排呈现，配九维设计档案与可复制的 AI 提示词。
 
 单文件交付 · 无构建依赖 · 离线可用 · WCAG AA 基线。新人接手先读 [HANDOFF.md](HANDOFF.md)。
@@ -10,7 +13,8 @@
 |------|------|
 | `index.html` | 图鉴主文件（全部自包含：样式 + 数据 + 13 个引擎） |
 | `verify.js` | 常驻校验套件：`node verify.js`（或 `npm test`）跑 46 项回归断言（含 README 计数守卫），退出码非 0 即有回归 |
-| `README.md` | 权威功能清单（面向使用者），11 处计数受 verify 守卫 |
+| `README.md` | 权威功能清单（面向使用者），16 处计数（中英双语）受 verify 守卫 |
+| `README.en.md` | 英文版手册（面向国际用户），核心计数同受双语守卫 |
 | `HANDOFF.md` | 交接文档（面向维护者）：内部结构、检查单、坑列表 |
 | `add_style.js` | 扩风格脚手架：`node add_style.js --file _spec_sXX.json`（事务式，编译不过不落盘） |
 | `_spec_s75/76/77.json` | 脚手架 spec 格式示例 |

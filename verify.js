@@ -152,10 +152,21 @@ const docClaims = [
   ['手机区风格数',  rdNum(/手机专属区\D*?(\d+) 台/),      r.exhibits],
 ];
 if (kCmd) docClaims.push(['⌘K风格数', +kCmd[1], r.exhibits], ['⌘K视图数', +kCmd[2], tabs], ['⌘K词条数', +kCmd[3], r.lexTerms]);
+// 英文版手册 README.en.md 同受计数守卫（措辞锚点：'N UI design styles' / '**N colors**' / 'N design concepts' / 'N specimens' / 'N views'）
+const readmeEn = fs.existsSync(__dirname + '/README.en.md') ? fs.readFileSync(__dirname + '/README.en.md', 'utf8') : '';
+if (readmeEn) {
+  const enNum = re => { const m = readmeEn.match(re); return m ? +m[1] : null; };
+  docClaims.push(
+    ['EN风格数', enNum(/(\d+) UI design styles/), r.exhibits],
+    ['EN色卡数', enNum(/\*\*(\d+) colors\*\*/),   r.uniqueColors],
+    ['EN词条数', enNum(/(\d+) design concepts/),  r.lexTerms],
+    ['EN标本数', enNum(/(\d+) specimens/),         r.specimens],
+    ['EN视图数', enNum(/styles \/ (\d+) views/), tabs]);
+}
 const docDrift = docClaims
   .filter(c => c[1] === null || c[1] !== c[2])
   .map(c => c[0] + (c[1] === null ? ':正则未命中(README 措辞变了,需同步守卫)' : ':doc=' + c[1] + '/data=' + c[2]));
-expect('README 计数守卫(11 处文档数字=数据真值)', docClaims.length === 11 && docDrift.length === 0, docDrift.join('; ') || ('claims=' + docClaims.length));
+expect('README 双语计数守卫(' + docClaims.length + ' 处文档数字=数据真值)', docDrift.length === 0, docDrift.join('; ') || ('claims=' + docClaims.length));
 
 console.log(fails.length ? '\n✗ '+fails.length+' 项未通过' : '\nALL PASS');
 process.exit(fails.length ? 1 : 0);

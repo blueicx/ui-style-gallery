@@ -3,7 +3,8 @@
 <rect x="40" y="40" width="1120" height="550" fill="none" stroke="#2a2e38" stroke-width="2"/>
 <text x="80" y="170" font-family="Helvetica,Arial,sans-serif" font-size="72" font-weight="700" fill="#f4f6f9" letter-spacing="-2">Interface Style Atlas</text>
 <text x="80" y="240" font-family="Helvetica,Arial,sans-serif" font-size="34" fill="#e85d26">UI 风格图鉴 · Vol.02</text>
-<text x="80" y="310" font-family="Helvetica,Arial,sans-serif" font-size="26" fill="#9aa1ad">77 种风格活体博物馆 — 展台 / 九维档案 / 词库 / 分馆 / 真机预览</text>
+<text x="80" y="310" font-family="Helvetica,Arial,sans-serif" font-size="26" fill="#9aa1ad">100 种风格活体博物馆 — 展台 / 九维档案 / 词库 / 分馆 / 真机预览</text>
+<text x="80" y="360" font-family="Helvetica,Arial,sans-serif" font-size="26" fill="#e85d26">LIVE · blueicx.github.io/ui-style-gallery</text>
 <rect x="0" y="470" width="150" height="160" fill="#f0ede4"/>
 <rect x="150" y="470" width="150" height="160" fill="#ececea"/>
 <rect x="300" y="470" width="150" height="160" fill="#c02b0a"/>

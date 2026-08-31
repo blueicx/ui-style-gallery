@@ -2,7 +2,7 @@
 
 > 交接日期：2026-08-31（批次 E 终版）｜ 仓库根：`E:\新建文件夹\ui-style-gallery`
 > 一句话：单文件「活体博物馆」UI 风格图鉴——**100 种风格**在同一组件基线上横向对比，配 70 词专业词库、7 座维度分馆、18 个视图与 9 大工具区。
-> 当前状态：**verify.js 全部断言 ALL PASS**（2026-08-31 批次 D 完成后实跑）；**已上传公开仓库** https://github.com/blueicx/ui-style-gallery （分支 main，2026-09-01 经 `gh repo create --public --source . --push` 推送，本地 origin 已配置）。
+> 当前状态：**verify.js 全部断言 ALL PASS**（2026-08-31 批次 D 完成后实跑）；**已上传公开仓库** https://github.com/blueicx/ui-style-gallery （分支 main，2026-09-01 推送；本地 origin 已配置）；**GitHub Pages 已上线** https://blueicx.github.io/ui-style-gallery/ （HTTP 200 实测）；英文手册 `README.en.md` 与双语计数守卫同批落地。
 
 ---
 
@@ -130,10 +130,10 @@ Start-Process -FilePath 'C:\Program Files\Google\Chrome\Application\chrome.exe' 
 
 ## 8. 遗留事项与建议下一步（按优先级）
 
-1. **og 分享图**仍是 87 风格版文案，扩到 100 后可重截（`--screenshot` 流程见 §5）。
+1. ~~og 分享图~~ 已重截为 100 风格版（2026-09-01，含 LIVE 地址行）。
 2. `_feat/` 已完成使命，feat.js 与主文件存在双源——如需改功能，改主文件即可，`_feat/` 只作存档（README/HANDOFF 已注明）。
-3. 英文站 i18n、在线取色（需服务端，违背无依赖铁律）——长期方向，暂缓。
-4. GitHub Pages 发布：仓库若公开，`Settings→Pages→main 分支根目录`即上线（PWA 在 https 下自动注册 SW）。
+3. 英文站全量 i18n、在线取色（需服务端，违背无依赖铁律）——长期方向，暂缓；README.en.md 已覆盖手册层英文。
+4. ~~GitHub Pages 发布~~ 已上线 https://blueicx.github.io/ui-style-gallery/ （REST 开启，push 自动重建；PWA SW 在 https 下注册）。
 5. 展品类风格（s90-s93 设计系统类）的 refs 均为官网域名，公开仓库注意时效性。
 
 ## 9. 相关技能（Hermes）
